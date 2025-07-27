@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nielmin/nielmin.github.io/issues"
   },
-  "homepage": "https://github.com/nielmin/nielmin.github.io#readme"
+  "homepage": "https://github.com/nielmin/nielmin.github.io#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
 }
