@@ -1,4 +1,7 @@
 module.exports = (config) => {
+  config.addPassthroughCopy("./src/styles");
+  config.addWatchTarget("./src/styles/");
+  
   // Returns a collection of blog posts in reverse order
   config.addCollection('blog', (collection) => {
     return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
