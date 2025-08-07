@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+
+
+{% block content %}
+<article>
+  {% include "partials/page-header.html" %}
+  <div class="[ no-js-hidden ] [ panel dot-shadow ] [ bg-light-glare ]">
+    <div class="[ wrapper ] [ flow flow-space-700 ]">
+      <h1 class="[ headline ] [ measure-mice color-quinary ]" data-highlight="dark">{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
+
+{% endblock %}
