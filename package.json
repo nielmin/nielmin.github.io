@@ -4,7 +4,9 @@
   "description": "[blog](https://nielmin.github.io)",
   "main": "index.js",
   "scripts": {
-    "start": "npx eleventy --serve"
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && npx @11ty/eleventy",
+    "start": "npm run clean && npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",
