@@ -1,0 +1,40 @@
+:root {
+  --pico-font-family-sans-serif: "Open Sans", sans-serif;
+  --pico-font-size: 100%;
+  --pico-spacing: 2rem;
+}
+
+[data-theme-switcher] {
+  color: var(--pico-contrast);
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.center,
+.centre,
+.feature-image {
+  text-align: center;
+}
+
+.container:not(.wider) {
+  max-width: 800px;
+}
+
+@media (width <=1250px) {
+  .container:not(.wider) {
+    max-width: 800px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+/* Updates for dark theme search */
+[data-theme=dark] {
+  color-scheme: dark;
+  --pagefind-ui-primary: #eeeeee;
+  --pagefind-ui-text: #eeeeee;
+  --pagefind-ui-background: #152028;
+  --pagefind-ui-border: #152028;
+  --pagefind-ui-tag: #152028;
+}
