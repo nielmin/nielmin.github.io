@@ -4,4 +4,13 @@ layout: 'layouts/about.html'
 permalink: '/about/index.html'
 ---
 
-Me, me, me.
+
+A nobody.
+
+### My Projects
+
+- A
+- B
+- C
+
+### Contact
