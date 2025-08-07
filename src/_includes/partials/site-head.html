@@ -1,16 +1,12 @@
 <header class="container">
-	<div>
-		<nav aria-label="Primary">
-			<ul>
-				<li><strong>{{ site.name }}</strong></li>
-			</ul>
-			<ul>
-				{% for item in navigation.items %}
-				<li>
-					<a href="{{ item.url }}">{{ item.text }}</a>
-				</li>
-				{% endfor %}
-			</ul>
-		</nav>
+	<div class="site-name">
+		<a href="/">{{ site.name }}</a>
 	</div>
+	<nav aria-label="Primary">
+		<ul class="nav-items">
+			{% for item in navigation.items %}
+			<li><a href="{{ item.url }}">{{ item.text }}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
 </header>
