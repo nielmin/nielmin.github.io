@@ -7,6 +7,14 @@
     {
       "text": "Blog",
       "url": "/blog/"
+    },
+    {
+      "text": "Uses",
+      "url": "/uses/"
+    },
+    {
+      "text": "Now",
+      "url": "/now/"
     }
   ]
 }
