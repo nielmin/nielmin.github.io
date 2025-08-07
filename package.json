@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nielmin/nielmin.github.io#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@picocss/pico": "^2.1.1"
   }
 }
