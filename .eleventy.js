@@ -1,5 +1,6 @@
 module.exports = (config) => {
   config.addPassthroughCopy("./src/styles");
+  config.addPassthroughCopy({"./node_modules/@picocss/pico/css/pico.min.css": "styles/pico.min.css"});
   config.addWatchTarget("./src/styles/");
   
   // Returns a collection of blog posts in reverse order
