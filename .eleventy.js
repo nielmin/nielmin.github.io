@@ -2,8 +2,10 @@ const { DateTime } = require("luxon");
 
 module.exports = (config) => {
   config.addPassthroughCopy("./src/styles");
-  config.addPassthroughCopy({"./node_modules/@picocss/pico/css/pico.min.css": "styles/pico.min.css"});
   config.addWatchTarget("./src/styles/");
+
+  config.addPassthroughCopy({"./node_modules/@picocss/pico/css/pico.min.css": "styles/pico.min.css"});
+  config.addPassthroughCopy({"./node_modules/@picocss/pico/css/pico.colors.min.css": "styles/pico.colors.min.css"});
   
   config.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
