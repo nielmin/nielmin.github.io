@@ -1,11 +1,11 @@
 <header class="container">
 	<div class="site-name">
-		<a href="/">{{ site.name }}</a>
+		<a href="/" class="home-link">{{ site.name }}</a>
 	</div>
 	<nav aria-label="Primary">
-		<ul class="nav-items">
+		<ul class="nav">
 			{% for item in navigation.items %}
-			<li><a href="{{ item.url }}">{{ item.text }}</a></li>
+			<li class="nav-item"><a href="{{ item.url }}">{{ item.text }}</a></li>
 			{% endfor %}
 		</ul>
 	</nav>
