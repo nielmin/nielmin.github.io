@@ -1,5 +1,5 @@
 ---
-title: 'Title title'
+title: 'Blog'
 layout: 'layouts/feed.html'
 pagination:
   data: collections.blog
