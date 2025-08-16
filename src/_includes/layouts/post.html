@@ -4,8 +4,11 @@
 <section id="heading">
 
   <h2>{{ title }}</h2>
-  <p><time datetime="{{ page.date | htmlDateString }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
+  <h3>
+    <time datetime="{{ page.date | htmlDateString }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
+  </h3>
 </section>
+
 <article>
   {{ content | safe }}
 </article>
