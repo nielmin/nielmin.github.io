@@ -1,8 +1,9 @@
-<div class="" id="post-list">
+<div class="postlist" id="post-list">
   <div>
     <ul>
       {% for post in posts %}
-      <li>{{ post.date | readableDate }} - <a href="{{ post.url }}" class="post-list__link">{{ post.data.title
+      <li class="postlist-date">{{ post.date | readableDate }} - <a href="{{ post.url }}" class="postlist-link">{{
+          post.data.title
           }}</a></li>
       {% endfor %}
     </ul>
