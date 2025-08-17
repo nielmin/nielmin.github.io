@@ -1,5 +1,6 @@
 ---
 title: 'Blog'
+summary: 'Here are some of my writings'
 layout: 'layouts/feed.html'
 pagination:
   data: collections.blog
