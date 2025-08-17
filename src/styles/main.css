@@ -341,3 +341,7 @@ header {
 .post-metadata time {
   margin-right: 1em;
 }
+
+article {
+  font-size: 1.2em;
+}
