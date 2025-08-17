@@ -129,8 +129,7 @@ a[href]:active {
   color: var(--text-color-link-active);
 }
 
-main,
-footer {
+main {
   padding: 1rem;
 }
 
@@ -214,6 +213,7 @@ code {
 }
 
 /* Header */
+footer,
 header {
   display: flex;
   gap: 1em;
