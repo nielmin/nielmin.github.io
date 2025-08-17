@@ -1,13 +1,9 @@
 <div class="" id="post-list">
-  {% if postListHeadline %}
-  <h2 class="" data-highlight="primary">
-    {{ postListHeadline }}
-  </h2>
-  {% endif %}
   <div>
     <ul>
       {% for post in posts %}
-      <li><a href="{{ post.url }}" class="post-list__link">{{ post.data.title }}</a></li>
+      <li>{{ post.date | readableDate }} - <a href="{{ post.url }}" class="post-list__link">{{ post.data.title
+          }}</a></li>
       {% endfor %}
     </ul>
   </div>
