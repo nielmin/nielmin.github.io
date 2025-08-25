@@ -309,19 +309,21 @@ header {
 
 .postlist-date {
   font-size: 1.1875em;
-  word-spacing: -0.5px;
+  /* word-spacing: -0.5px; */
 }
 
 .postlist-link {
-  font-size: 1.1875em;
+  /* font-size: 1.1875em; */
+  font-size: 1em;
   /* 19px /16 */
   font-weight: 700;
   flex-basis: calc(100% - 1.5rem);
   padding-left: .25em;
   padding-right: .5em;
-  text-underline-position: from-font;
-  text-underline-offset: 0;
-  text-decoration-thickness: 1px;
+  /* text-underline-position: from-font; */
+  /* text-underline-offset: 0; */
+  /* text-decoration-thickness: 1px; */
+  text-decoration: none;
 }
 
 .postlist-item-active .postlist-link {
