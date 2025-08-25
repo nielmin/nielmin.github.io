@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <!-- <link rel="stylesheet" href="/styles/pico.min.css"> -->
-  <!-- <link rel="stylesheet" href="/styles/pico.colors.min.css"> -->
-  <!-- <link rel="stylesheet" href="/styles/custom.css"> -->
-  <link rel="stylesheet" href="/styles/main.css">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light dark">
-  <title>{{ title }} | {{ site.name }}</title>
-</head>
+<div class="wrapper">
 
-<body>
-  {% include "partials/site-head.html" %}
-  <main class="container" tabindex="-1" id="main-content">{% block content %}{% endblock %}</main>
-  {% include "partials/footer.html" %}
+  <head>
+    <!-- <link rel="stylesheet" href="/styles/pico.min.css"> -->
+    <!-- <link rel="stylesheet" href="/styles/pico.colors.min.css"> -->
+    <!-- <link rel="stylesheet" href="/styles/custom.css"> -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark">
+    <title>{{ title }} | {{ site.name }}</title>
+  </head>
 
-</body>
+  <body>
+    {% include "partials/site-head.html" %}
+    <main class="page-body" tabindex="-1" id="main-content">{% block content %}{% endblock %}</main>
+    {% include "partials/footer.html" %}
+
+  </body>
+
+</div>
 
 </html>
