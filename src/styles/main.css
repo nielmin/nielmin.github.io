@@ -370,6 +370,10 @@ header {
   font-size: 0.85em;
 }
 
+.page-summary {
+  padding-bottom: 20px;
+}
+
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
