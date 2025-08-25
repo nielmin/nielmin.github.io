@@ -273,6 +273,8 @@ header {
   text-decoration: underline;
 }
 
+.site-name {}
+
 /* Posts list */
 .postlist {
   /* counter-reset: start-from var(--postlist-index); */
