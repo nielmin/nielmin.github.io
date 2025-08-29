@@ -35,24 +35,15 @@
   }
 }
 
-
-/* Global stylesheet */
-* {
-  box-sizing: border-box;
-}
-
 @view-transition {
   navigation: auto;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
+/* html, */
 body {
-  box-sizing: border-box;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 0;
   margin: 0 auto;
   font-family: var(--font-family);
@@ -69,8 +60,8 @@ body {
 }
 
 .page-body {
-  padding: 20px;
-  flex-grow: 1;
+  /* padding: 20px; */
+  /* flex-grow: 1; */
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -115,12 +106,30 @@ p:last-child {
 
 p {
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 .page-summary,
 #post-summary {
-  font-size: 100%;
   font-style: italic;
+  margin: 20px;
+}
+
+#heading {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1em;
+
+  h2 {
+    margin-bottom: 0;
+
+  }
+
+  p {
+    margin-top: 0;
+  }
+
 }
 
 li {
@@ -150,13 +159,6 @@ main :first-child {
 
 header {
   border-bottom: 1px dashed var(--color-gray-20);
-}
-
-.center {
-  display: flex;
-  margin-top: auto;
-  justify-content: center;
-  text-align: center;
 }
 
 #skip-link {
@@ -231,7 +233,6 @@ code {
 }
 
 /* Header */
-footer,
 header {
   display: flex;
   gap: 1em;
@@ -239,6 +240,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1em;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  align-items: center;
+  font-size: 0.85em;
+  margin-top: auto;
 }
 
 .home-link {
@@ -357,30 +367,31 @@ header {
   margin-right: 1em;
 }
 
-.page-header,
-.page-footer {
-  padding: 20px;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
-.page-footer {
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85em;
+.page-header {
+  /* .page-footer { */
+  /* padding: 20px; */
 }
 
 .page-summary {
-  padding-bottom: 20px;
+  /* padding: 10px; */
 }
 
-.wrapper {
-  box-sizing: border-box;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+/* .wrapper { */
+/* box-sizing: border-box; */
+/* min-height: 100%; */
+/* display: flex; */
+/* flex-direction: column; */
+/* } */
 
 article {
-  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  /* font-size: 1.1em; */
+  /* padding: 0 auto; */
+  /* margin: 0 auto; */
 }
