@@ -1,3 +1,4 @@
-# My personal blog (WIP)
+# My personal [site](https://nielmin.github.io)
 
-[blog](https://nielmin.github.io)
+## TODO
+- [ ] If no blog posts exists, site gives generic 404
