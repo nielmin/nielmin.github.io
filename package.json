@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "npm run clean && npx @11ty/eleventy",
-    "start": "npm run clean && npx @11ty/eleventy --serve"
+    "start": "npm run clean && npx @11ty/eleventy --serve",
+    "deploy": "npm run clean && npx @11ty/eleventy --pathprefix=https://github.com/nielmin/nielmin.github.io"
   },
   "repository": {
     "type": "git",
