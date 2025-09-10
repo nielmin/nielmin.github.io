@@ -1,0 +1,14 @@
+{
+  "links": [
+    {
+      "text": "GitHub",
+      "img": "static/img/github.svg",
+      "url": "https://github.com/nielmin"
+    },
+    {
+      "text": "Email",
+      "img": "static/img/mail.svg",
+      "url": "mailto:danhwa13@gmail.com"
+    }
+  ]
+}
