@@ -3,8 +3,8 @@ const { DateTime } = require("luxon");
 module.exports = (config) => {
   config.addPassthroughCopy("static");
 
-  config.addPassthroughCopy("./src/styles");
-  config.addWatchTarget("./src/styles/");
+  config.addPassthroughCopy("src/css");
+  config.addWatchTarget("src/css/");
 
   config.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
