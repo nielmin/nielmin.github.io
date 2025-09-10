@@ -1,7 +1,14 @@
 ---
-title: 'What I am doing now'
+title: 'Now'
 layout: 'layouts/about.html'
 permalink: '/now/index.html'
 ---
 
-Studying to meet job listing qualifications.
+I am currently:
+
+- Applying for jobs.
+
+- Studying for job qualifications.
+
+- Tinkering with industry tools (for jobs).
+
