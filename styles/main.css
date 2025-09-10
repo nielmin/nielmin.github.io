@@ -101,7 +101,7 @@ iframe {
 }
 
 p:last-child {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 
 p {
@@ -242,13 +242,22 @@ header {
   padding: 1em;
 }
 
-footer {
+.footer {
   display: flex;
-  justify-content: center;
-  padding: 1em;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: 0.85em;
   margin-top: auto;
+}
+
+.footer-link {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 .home-link {
@@ -387,8 +396,12 @@ article {
   display: flex;
   flex-direction: column;
 
-  h1 {
+  * {
     margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 15px;
   }
 
   /* font-size: 1.1em; */
