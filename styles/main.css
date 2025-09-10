@@ -1,7 +1,21 @@
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2") format("woff2");
+  font-display: block;
+  font-weight: 200 800;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("/static/atkinson/AtkinsonHyperlegibleMonoVF-Variable.woff2") format("woff2");
+  font-display: block;
+  font-weight: 200 800;
+}
+
 /* Defaults */
 :root {
-  --font-family: -apple-system, system-ui, sans-serif;
-  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --font-family: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif;
+  --font-family-monospace: "Atkinson Hyperlegible Mono", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
 /* Theme colors */
@@ -47,6 +61,7 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: var(--font-family);
+  font-size: 1.250rem;
   color: var(--text-color);
   background-color: var(--background-color);
 }
@@ -56,7 +71,7 @@ html {
 }
 
 body {
-  max-width: 50em;
+  max-width: 40rem;
 }
 
 .page-body {
@@ -101,7 +116,7 @@ iframe {
 }
 
 p:last-child {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 
 p {
@@ -242,13 +257,22 @@ header {
   padding: 1em;
 }
 
-footer {
+.footer {
   display: flex;
-  justify-content: center;
-  padding: 1em;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: 0.85em;
   margin-top: auto;
+}
+
+.footer-link {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 .home-link {
@@ -283,7 +307,26 @@ footer {
   text-decoration: underline;
 }
 
-.site-name {}
+.site-name {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+
+  ul {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    height: 1em;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
 
 /* Posts list */
 .postlist {
@@ -387,8 +430,12 @@ article {
   display: flex;
   flex-direction: column;
 
-  h1 {
+  * {
     margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 15px;
   }
 
   /* font-size: 1.1em; */
