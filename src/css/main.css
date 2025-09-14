@@ -1,3 +1,5 @@
+@import "reset.css";
+
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
   src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2") format("woff2");
