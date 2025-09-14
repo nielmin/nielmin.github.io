@@ -1,3 +1,5 @@
+@import "reset.css";
+
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
   src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2") format("woff2");
@@ -429,12 +431,9 @@ article {
   display: flex;
   flex-direction: column;
 
-  * {
-    margin-bottom: 0;
-  }
-
   p {
     margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   /* font-size: 1.1em; */
