@@ -123,29 +123,33 @@ p:last-child {
 
 p {
   line-height: 1.5;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .page-summary,
-#post-summary {
+.post-summary {
+  display: flex;
+  flex-direction: row;
   font-style: italic;
-  margin: 20px;
+  align-items: center;
+  margin: 1rem;
+  gap: 2em;
 }
 
 #heading {
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 1em;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 
-  h2 {
-    margin-bottom: 0;
+  /* h2 { */
+  /* margin-bottom: 0; */
 
-  }
+  /* } */
 
-  p {
-    margin-top: 0;
-  }
+  /* p { */
+  /* margin-top: 0; */
+  /* } */
 
 }
 
