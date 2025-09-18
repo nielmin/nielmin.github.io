@@ -3,6 +3,9 @@ const { DateTime } = require("luxon");
 module.exports = (config) => {
   config.addPassthroughCopy("static");
 
+  config.addPassthroughCopy("static/img");
+  config.addWatchTarget("static/img");
+
   config.addPassthroughCopy("src/css");
   config.addWatchTarget("src/css/");
 
