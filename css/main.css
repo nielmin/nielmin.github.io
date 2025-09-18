@@ -2,16 +2,14 @@
 
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
-  src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.ttf") format("ttf");
+  src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
   font-display: block;
-  font-weight: 200 800;
 }
 
 @font-face {
   font-family: "Atkinson Hyperlegible Mono";
-  src: url("/static/atkinson/AtkinsonHyperlegibleMonoVF-Variable.ttf") format("ttf");
+  src: url("/static/atkinson/AtkinsonHyperlegibleMonoVF-Variable.ttf") format("truetype");
   font-display: block;
-  font-weight: 200 800;
 }
 
 /* Defaults */
@@ -36,7 +34,7 @@
   --syntax-tab-size: 2;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     --color-gray-20: #e0e0e0;
     --color-gray-50: #C0C0C0;
@@ -63,7 +61,7 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: var(--font-family);
-  font-size: 1.250rem;
+  font-size: 1.125rem;
   color: var(--text-color);
   background-color: var(--background-color);
 }
@@ -73,7 +71,7 @@ html {
 }
 
 body {
-  max-width: 40rem;
+  max-width: 50rem;
 }
 
 .page-body {
@@ -360,13 +358,13 @@ header {
 
 /* .postlist-date, */
 .postlist-item:before {
-  font-size: 0.8125em;
+  font-size: 0.8125rem;
   /* 13px /16 */
   color: var(--color-gray-90);
 }
 
 .postlist-date {
-  font-size: 1.1875em;
+  font-size: 1.1875rem;
   /* word-spacing: -0.5px; */
 }
 
@@ -436,8 +434,8 @@ article {
   flex-direction: column;
 
   p {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   /* font-size: 1.1em; */
