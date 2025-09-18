@@ -1,0 +1,15 @@
+/* https://gluer.org/blog/dark-themes-with-modern-css/ */
+:root {
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
+  color-scheme: light dark;
+  --color-gray-20: #e0e0e0;
+  --color-gray-50: #C0C0C0;
+  --color-gray-90: light-dark(#333, #dad8d8);
+
+  --background-color: light-dark(#fff, #15202b);
+
+  --text-color: var(--color-gray-90);
+  --text-color-link: light-dark(#082840, #1493fb);
+  --text-color-link-active: light-dark(#5f2b48, #6969f7);
+  --text-color-link-visited: light-dark(#17050F, #a6a6f8);
+}
