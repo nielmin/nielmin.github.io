@@ -358,13 +358,13 @@ header {
 
 /* .postlist-date, */
 .postlist-item:before {
-  font-size: 0.8125em;
+  font-size: 0.8125rem;
   /* 13px /16 */
   color: var(--color-gray-90);
 }
 
 .postlist-date {
-  font-size: 1.1875em;
+  font-size: 1.1875rem;
   /* word-spacing: -0.5px; */
 }
 
