@@ -1,22 +1,5 @@
 @import "reset.css";
-
-@font-face {
-  font-family: "Atkinson Hyperlegible Next";
-  src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.ttf") format("truetype");
-  font-display: block;
-}
-
-@font-face {
-  font-family: "Atkinson Hyperlegible Mono";
-  src: url("/static/atkinson/AtkinsonHyperlegibleMonoVF-Variable.ttf") format("truetype");
-  font-display: block;
-}
-
-/* Defaults */
-:root {
-  --font-family: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif;
-  --font-family-monospace: "Atkinson Hyperlegible Mono", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
-}
+@import "fonts.css";
 
 /* Theme colors */
 :root {
