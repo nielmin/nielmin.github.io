@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
-  src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.woff2") format("woff2");
+  src: url("/static/atkinson/AtkinsonHyperlegibleNextVF-Variable.ttf") format("ttf");
   font-display: block;
   font-weight: 200 800;
 }
 
 @font-face {
   font-family: "Atkinson Hyperlegible Mono";
-  src: url("/static/atkinson/AtkinsonHyperlegibleMonoVF-Variable.woff2") format("woff2");
+  src: url("/static/atkinson/AtkinsonHyperlegibleMonoVF-Variable.ttf") format("ttf");
   font-display: block;
   font-weight: 200 800;
 }
