@@ -395,3 +395,12 @@ article {
   /* padding: 0 auto; */
   /* margin: 0 auto; */
 }
+
+blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--color-gray-40);
+  background-color: var(--color-gray-10);
+  color: var(--text-color);
+  font-style: italic;
+}
