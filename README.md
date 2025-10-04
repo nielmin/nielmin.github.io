@@ -5,6 +5,7 @@
 - [X] Create custom 404 page
 - [ ] Add RSS plugin
 - [ ] Clean up CSS
+- [ ] A 'Now' feed instead of a constantly changing page 
 
 ## FYI
 
