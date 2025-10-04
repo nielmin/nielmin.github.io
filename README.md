@@ -6,6 +6,7 @@
 - [ ] Add RSS plugin
 - [ ] Clean up CSS
 - [ ] A 'Now' feed instead of a constantly changing page 
+- [ ] Add 'Last Modified' next to creation date
 
 ## FYI
 
