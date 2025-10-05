@@ -71,7 +71,7 @@ In order to return to normalcy, the citizens decide to do democracy "right" this
 The popular ones gets elected, and the people believe that their electorates will lead them to a better future.
 
 But because this is the first time democracy has been done "properly", the new government makes some mistakes despite their best intentions.
-They pass laws that don't benefit everyone; they go over the budget; they increase taxes too high.
+They pass laws that don't benefit everyone; they go over the budget; they increase taxes too much.
 
 They just don't listen to the people.
 
