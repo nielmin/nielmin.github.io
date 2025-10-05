@@ -64,7 +64,7 @@ Because whatever the Nix community has resembles no such thing.
 
 ### Humor me
 
-Imagine a democratic country was found to be corrupt.
+Imagine a democratic country was found to be corrupt since its inception.
 After a fierce and intense battle, the citizens, with help from the police, finally arrest the pollticians and exile them from the country.
 
 In order to return to normalcy, the citizens decide to do democracy "right" this time and vote on their officials in proper elections.
