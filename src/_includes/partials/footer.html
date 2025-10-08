@@ -1,8 +1,19 @@
 <footer class="footer">
-	<p>
+	<div id="copyright">
 		© nielmin 2025
-	</p>
-	<p>
-		Made with <a href="https://11ty.dev" target="_blank" rel="noreferrer noopener">11ty</a>.
-	</p>
+	</div>
+
+	<div id="socials">
+		<ul>
+			{% for link in socials.links %}
+			<li>
+				<a href="{{ link.url }}">{{ link.text }}</a>
+				{% endfor %}
+			</li>
+		</ul>
+	</div>
+
+	<div id="made-with">
+		Made with <a href="https://11ty.dev" target="_blank" rel="noreferrer noopener">11ty</a>
+	</div>
 </footer>
