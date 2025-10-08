@@ -223,6 +223,18 @@ header {
   margin: 0;
 }
 
+.footer-socials-list {
+  display: flex;
+  gap: .5em 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-social-item {
+  display: inline-block;
+}
+
 .home-link {
   flex-grow: 1;
   font-size: 1em;
