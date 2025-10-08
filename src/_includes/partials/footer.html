@@ -1,19 +1,19 @@
 <footer class="footer">
-	<div id="copyright">
+	<div class="footer-copyright">
 		© nielmin 2025
 	</div>
 
-	<div id="socials">
-		<ul>
+	<div class="footer-socials">
+		<ul class="footer-socials-list">
 			{% for link in socials.links %}
-			<li>
+			<li class="footer-social-item">
 				<a href="{{ link.url }}">{{ link.text }}</a>
 				{% endfor %}
 			</li>
 		</ul>
 	</div>
 
-	<div id="made-with">
+	<div class="footer-made-with">
 		Made with <a href="https://11ty.dev" target="_blank" rel="noreferrer noopener">11ty</a>
 	</div>
 </footer>
