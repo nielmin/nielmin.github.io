@@ -1,6 +1,6 @@
 ---
 title: 'Now'
-layout: 'layouts/about.html'
+layout: 'layouts/now.html'
 permalink: '/now/index.html'
 ---
 
