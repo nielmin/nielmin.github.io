@@ -82,3 +82,13 @@ header {
 .nav a[href][aria-current="page"] {
   text-decoration: underline;
 }
+
+.page-summary,
+.post-summary {
+  display: flex;
+  flex-direction: row;
+  font-style: italic;
+  align-items: center;
+  margin: 1rem;
+  gap: 2em;
+}
