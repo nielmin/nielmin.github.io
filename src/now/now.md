@@ -2,6 +2,7 @@
 title: 'Now'
 layout: 'layouts/now.html'
 permalink: '/now/index.html'
+date: '2025-10-08'
 ---
 
 I am currently:
