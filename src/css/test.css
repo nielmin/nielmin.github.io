@@ -3,6 +3,10 @@ html {
 }
 
 body {
+  /* Make footer stick to the page bottom */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: system-ui;
   font-size: 1.25rem;
   line-height: 1.5;
