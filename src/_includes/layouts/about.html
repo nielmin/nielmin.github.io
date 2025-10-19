@@ -1,9 +1,12 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<article>
+<section>
   {% include "partials/page-header.html" %}
   <h1 class="" data-highlight="dark">{{ title }}</h1>
+  <p>{{ summary }}</p>
+</section>
+<article>
   {{ content | safe }}
 </article>
 

@@ -4,8 +4,10 @@
 {% set pageHeaderSummary = summary %}
 
 {% block content %}
-<article>
+<section>
   {% include "partials/page-header.html" %}
+</section>
+<article>
   {% include "partials/post-list.html" %}
 </article>
 {% endblock %}

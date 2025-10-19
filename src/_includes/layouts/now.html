@@ -1,8 +1,10 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<article>
+<section>
   <h2>{{ title }}</h2>
+</section>
+<article>
   {{ content | safe }}
 </article>
 {% endblock %}
