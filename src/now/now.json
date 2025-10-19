@@ -1,4 +1,4 @@
 {
   "layout": "layouts/now.html",
-  "permalink": "/now/{{ date | slugify }}/index.html"
+  "permalink": "/now/{{ title | slugify }}/index.html"
 }
