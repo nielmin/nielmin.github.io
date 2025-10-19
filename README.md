@@ -5,8 +5,8 @@
 - [X] Create custom 404 page
 - [ ] Add RSS plugin
 - [X] ~Clean up CSS~ Switched to PicoCSS 
-- [ ] A 'Now' feed instead of a constantly changing page 
-- [ ] Add 'Last Modified' next to creation date
+- [X] A 'Now' feed instead of a constantly changing page 
+- [X] ~Add 'Last Modified' next to creation date~ Not needed
 
 ## FYI
 
