@@ -1,10 +1,9 @@
 ---
 title: 'Gear & Software'
+summary: "What I'm currently using."
 layout: 'layouts/about.html'
 permalink: '/uses/index.html'
 ---
-
-What I'm currently using.
 
 ## Main Desktop
 
