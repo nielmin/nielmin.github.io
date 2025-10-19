@@ -1,14 +1,8 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<section id="heading">
-  <h2>{{ title }}</h2>
-  <div class="page-date">
-    <time datetime="{{ page.date | htmlDateString }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
-  </div>
-</section>
-
 <article>
+  <h2>{{ title }}</h2>
   {{ content | safe }}
 </article>
 {% endblock %}
