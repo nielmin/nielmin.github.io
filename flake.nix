@@ -30,7 +30,7 @@
           # The Nix packages provided in the environment
           packages = with pkgs; [
             jujutsu
-            nodejs_22
+            nodejs_24
             vscode-langservers-extracted
             nodePackages.prettier
           ];
