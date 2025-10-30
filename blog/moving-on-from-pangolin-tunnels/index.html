@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/css/pico.classless.orange.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
+  <title>Moving on from Pangolin Tunnels | nielmin</title>
+</head>
+
+<body>
+  <header>
+	<nav aria-label="Primary">
+		<ul>
+			<li><a href="/">nielmin</a></li>
+		</ul>
+		<ul>
+			
+			<li><a href="/blog/">Blog</a></li>
+			
+			<li><a href="/uses/">Uses</a></li>
+			
+			<li><a href="/now/">Now</a></li>
+			
+		</ul>
+	</nav>
+</header>
+  <main class="page-body" tabindex="-1" id="main-content">
+<section id="heading">
+
+  <h2>Moving on from Pangolin Tunnels</h2>
+  <p>
+    <time datetime="2025-10-30" data-pagefind-sort="date">30 Oct 2025</time>
+  </p>
+</section>
+
+<p class="post-summary">Onto better heights with NetBird</p>
+
+<article>
+  <p>For quite a while now I've been using <a href="https://github.com/fosrl/pangolin">Pangolin Tunnels</a> on a VPS to access my homelab services.
+It's been pretty solid for some months now, and it is a great FOSS alternative to Cloudflare Tunnels.
+But me being me, I wanted to try out something else.</p>
+<p>That something else being <a href="https://netbird.io/">Netbird</a>.</p>
+<p>Simply put, Netbird is a more open-source and non-VC-backed version of <a href="https://tailscale.com/">Tailscale</a>.</p>
+<p>Before Pangolin Tunnels, I was using Tailscale with a <a href="https://caddyserver.com/">Caddy reverse proxy</a> to redirect a custom domain to my homelab.
+But when I saw that <a href="https://tailscale.com/blog/series-c">Tailscale raised $160M</a> earlier this year, I started to look for some alternatives.
+It's not because Tailscale got worse or anything, but because VC-backed stuff has a tendency to enshitify over time.</p>
+<h3>NetBird any good?</h3>
+<p>Honestly I couldn't tell you.
+I thought latency would improve because of the mesh feature, but it's about the same as Tailscale from what I can remember.</p>
+<p>But latency isn't really that important to me since all I really need from my homelab is access to my <a href="https://github.com/tomsquest/docker-radicale">calendar &amp; contacts</a>, <a href="https://github.com/miniflux/v2">RSS reader</a>, and <a href="https://github.com/sentriz/gonic">music server</a>.</p>
+<p>I will say that I've been having some trouble getting the NetBird container to work with <a href="https://www.redhat.com/en/blog/quadlet-podman">Podman quadlet</a>.
+I prefer using quadlets whenever I can in place of Docker.
+I recently learned about <a href="https://www.redhat.com/en/blog/podman-kubernetes-secrets">podman secrets</a>, which has made me like Podman even more.
+But for whatever reason I can't get it to work.</p>
+<p>This is non-working quadlet:</p>
+<pre><code>[Unit]
+Description=NetBird container
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=netbird
+Image=docker.io/netbirdio/netbird:latest
+AddCapability=NET_ADMIN SYS_ADMIN SYS_RESOURCE
+Network=host
+Volume=%h/containers/netbird-client:/var/lib/netbird:z
+Secret=nb-sk-fedora,type=env,target=NB_SETUP_KEY
+AutoUpdate=registry
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
+</code></pre>
+<p>Maybe I'm not understanding Podman Secrets fully.
+Or maybe this is another case where the container has to run with root privileges.</p>
+<p>I'll fiddle with this later.</p>
+<p>In the meantime, the NetBird client is running using Docker Compose:</p>
+<pre><code>services:
+  netbird:
+      container_name: netbird
+      hostname: fedora
+      cap_add:
+          - NET_ADMIN
+          - SYS_ADMIN
+          - SYS_RESOURCE
+      network_mode: host
+      environment:
+          - NB_SETUP_KEY=&lt;SETUP-KEY&gt;
+      volumes:
+          - /path/to/containers/folder/netbird-client:/var/lib/netbird
+      image: netbirdio/netbird:latest
+      restart: always
+</code></pre>
+<h3>TL;DR</h3>
+<p>Nothing wrong with Pangolin Tunnels, just wanted to try out Netbird + Caddy again.</p>
+
+</article>
+</main>
+  <footer>
+	<small>
+		nielmin © 2025
+		 • <a href="https://github.com/nielmin">GitHub</a>
+		 • <a href="mailto:danhwa13@gmail.com">Email</a>
+		
+	</small>
+</footer>
+
+</body>
+
+</html>
