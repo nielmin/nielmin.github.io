@@ -1,6 +1,7 @@
 ---
 title: "Don't use Linux if you hate Microsoft"
 summary: "You're setting yourself up for failure"
+date: '2025-10-03'
 tags: [ 'Test' ]
 ---
 
