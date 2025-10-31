@@ -1,9 +1,8 @@
 ---
 title: 'Hello'
+subtitle: "My name's Daniel. Welcome to my site."
 layout: 'layouts/home.html'
 ---
-
-My name's Daniel. Welcome to my site (WIP).
 
 Check out my [blog](/blog) for some posts about my interests.
 
