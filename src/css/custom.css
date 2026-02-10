@@ -1,5 +1,5 @@
 :root {
-  --fg: #2b2b2b;
+  --fg: #1a1a1a;
   --bg: #fafafa;
   --font: Atkinson Hyperlegible Next, Arial, sans-serif;
   --font-h: Atkinson Hyperlegible Next, Arial, sans-serif;
@@ -8,6 +8,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --fg: #fafafa;
-    --bg: #2b2b2b;
+    --bg: #1a1a1a;
   }
 }
