@@ -7,7 +7,7 @@ permalink: '/uses/index.html'
 
 ## Main Desktop
 
-- OS: Fedora 42 KDE
+- OS: Fedora 43 KDE
 - CPU: AMD Ryzen 5 5600X (6c/12t)
 - GPU: XFX RX 6700 XT (12 GB)
 - RAM: Corsair Vengeance LPX 3200 MHz (48 GB)
