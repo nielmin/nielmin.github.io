@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>nielmin&#39;s blog</title>
+  <subtitle>Blog posts from nielmin&#39;s personal site</subtitle>
+  <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/feed.xml" rel="self" />
+  <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/" />
+  <updated>2025-10-30T00:00:00Z</updated>
+  <id>https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/</id>
+  <author>
+    <name>nielmin</name>
+  </author>
+  <entry>
+    <title>Don&#39;t use Linux if you hate Microsoft</title>
+    <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/" />
+    <updated>2025-10-03T00:00:00Z</updated>
+    <id>https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/</id>
+    <content type="html">&lt;p&gt;With the end of Windows 10 coming in 2 weeks, people have a couple of options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Stick with Windows 10 until they&#39;re forced to upgrade (like how some did with Windows 7).&lt;/li&gt;
+&lt;li&gt;Buy a Mac and use macOS.&lt;/li&gt;
+&lt;li&gt;Use Linux.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And I want to talk about Option 3: Linux.
+More specifically, the reason behind switching operating systems.
+Because currently, I believe most people are switching to Linux because they hate Microsoft.
+And that&#39;s the wrong way to do it.&lt;/p&gt;
+&lt;h2&gt;Exponential Decay of Windows&lt;/h2&gt;
+&lt;p&gt;Over the years, Microsoft has made Windows into a terrible user experience.
+Even amongst non-technical people, their opinion of Windows at best is tolerable.
+From hours-long updates that could break your PC to unhelpful BSOD, there&#39;ve been even more problems Microsoft has added recently.&lt;/p&gt;
+&lt;p&gt;Here&#39;s a couple off the top of my head:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ads in your start menu.&lt;/li&gt;
+&lt;li&gt;Copilot and Windows Recall.&lt;/li&gt;
+&lt;li&gt;OneDrive uploading your files automatically without your permission.&lt;/li&gt;
+&lt;li&gt;New system requirements.&lt;/li&gt;
+&lt;li&gt;Telemetry.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All of this for an operating system that costs a $100, and treats the end user like shit.&lt;/p&gt;
+&lt;p&gt;Because of this, people are looking for alternatives, specifically Linux.&lt;/p&gt;
+&lt;p&gt;Cause unlike most modern software, Linux has continued to gradually get better over the year.
+The biggest achievement being gaming.&lt;/p&gt;
+&lt;p&gt;As long as the game you want to play doesn&#39;t require an anti-cheat, most games will run &lt;em&gt;fine&lt;/em&gt; on Linux.
+That, in conjunction with better performance, lack of telemetry, ads, AI, etc., Linux is looking pretty good.
+So good that many people might switch to Linux once Windows 10 reaches End of Life.&lt;/p&gt;
+&lt;p&gt;But there&#39;s one glaring problem.&lt;/p&gt;
+&lt;h2&gt;Linux is not Windows&lt;/h2&gt;
+&lt;p&gt;While obvious, I don&#39;t think people know what this implies: &lt;strong&gt;they&#39;re going to have to learn how to use Linux&lt;/strong&gt; (yes, that includes the scary TERMINAL).
+I&#39;ve seen so many new Linux users on &lt;a href=&quot;https://reddit.com/r/linux&quot;&gt;r/linux&lt;/a&gt; and in YouTube comments complain about how the thing they did on Windows doesn&#39;t work on Linux.
+That because Linux doesn&#39;t behave like Windows (the thing that they&#39;re trying to get away from), Linux is &amp;quot;unintuitive&amp;quot;, &amp;quot;not user-friendly&amp;quot;, and &amp;quot;not ready for the public&amp;quot;.&lt;/p&gt;
+&lt;p&gt;And that&#39;s bullshit.&lt;/p&gt;
+&lt;p&gt;What these anonymous internet folks are actually saying is that they don&#39;t want to put in the effort to learn Linux (aka lazy).
+They cry how they just want to &amp;quot;get work done&amp;quot; or &amp;quot;play videogames/create music/edit videos/use Photoshop&amp;quot;, not roleplay as a sysadmin.
+And if that IS the case, then stop complaining and begrudingly use Windows.
+Linux is free and worked on by volunteers around the globe.&lt;/p&gt;
+&lt;p&gt;No one&#39;s forcing you to use Linux.&lt;/p&gt;
+&lt;p&gt;No one&#39;s being paid to market Linux as the savior of OSes.&lt;/p&gt;
+&lt;p&gt;Otherwise, if you&#39;re unwilling to learn even a modicum of the thing your planning on replacing and using for the forseeable future, you&#39;re going to fail and have a bad time.&lt;/p&gt;
+&lt;h2&gt;How to Succeed in Linux (NOT CLICKBAIT!)&lt;/h2&gt;
+&lt;p&gt;Instead of running to Linux because Windows is an abusive partner, learn to love something about Linux instead.
+Instead of focusing on the things you hate about Windows, focus on the thing that excites you about Linux.
+Instead of remembering all the bad memories you had with Windows, look forward to all the great ones you&#39;ll have with your new life-long partner Linux.&lt;/p&gt;
+&lt;p&gt;Okay, enough that&#39;s enough personification of operating systems.&lt;/p&gt;
+&lt;h2&gt;LoVe nOT hATe&lt;/h2&gt;
+&lt;p&gt;Do you know what made me stick with Linux for the long run?&lt;/p&gt;
+&lt;p&gt;No, it wasn&#39;t an ever-increasing amount of vitriol for Microsoft.&lt;/p&gt;
+&lt;p&gt;No, it wasn&#39;t the freedom from ads and telemetry.&lt;/p&gt;
+&lt;p&gt;No, it wasn&#39;t the lack of viruses or performance gains I would get.&lt;/p&gt;
+&lt;p&gt;It was &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Yes, the highly acclaimed syncing tool that&#39;s used by sysadmins is what made me switch to Linux.
+After experiencing data loss, I was looking for a simple yet robust backup tool for my personal files.
+After googling a bunch about what was available, it was between &lt;code&gt;FreeFileSync&lt;/code&gt; and &lt;code&gt;rsync&lt;/code&gt;.
+And in the end, the scriptablility of &lt;code&gt;rsync&lt;/code&gt; won, and I was willing to give up the familiarity of Windows just to get first-class support for &lt;code&gt;rsync&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It&#39;s been 6 years since.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The people that will succeed in Linux and continue to use it are the ones that will find learning about it more exciting than hating.&lt;/p&gt;
+&lt;p&gt;Maybe you saw Pewdiepie&#39;s video about Arch.&lt;/p&gt;
+&lt;p&gt;Or maybe you happened to stumble upon a post from &lt;a href=&quot;https://reddit.com/r/unixporn&quot;&gt;r/unixporn&lt;/a&gt; and saw how cool and slick an operating system can be.&lt;/p&gt;
+&lt;p&gt;At the end of the day, swiching to Linux will require some effort on your end, and it&#39;s better to go about it with earnest than dread.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Moving on from Pangolin Tunnels</title>
+    <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/moving-on-from-pangolin-tunnels/" />
+    <updated>2025-10-30T00:00:00Z</updated>
+    <id>https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/moving-on-from-pangolin-tunnels/</id>
+    <content type="html">&lt;p&gt;For quite a while now I&#39;ve been using &lt;a href=&quot;https://github.com/fosrl/pangolin&quot;&gt;Pangolin Tunnels&lt;/a&gt; on a VPS to access my homelab services.
+It&#39;s been pretty solid for some months now, and it is a great FOSS alternative to Cloudflare Tunnels.
+But me being me, I wanted to try out something else.&lt;/p&gt;
+&lt;p&gt;That something else being &lt;a href=&quot;https://netbird.io/&quot;&gt;Netbird&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Simply put, Netbird is a more open-source and non-VC-backed version of &lt;a href=&quot;https://tailscale.com/&quot;&gt;Tailscale&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before Pangolin Tunnels, I was using Tailscale with a &lt;a href=&quot;https://caddyserver.com/&quot;&gt;Caddy reverse proxy&lt;/a&gt; to redirect a custom domain to my homelab.
+But when I saw that &lt;a href=&quot;https://tailscale.com/blog/series-c&quot;&gt;Tailscale raised $160M&lt;/a&gt; earlier this year, I started to look for some alternatives.
+It&#39;s not because Tailscale got worse or anything, but because VC-backed stuff has a tendency to enshitify over time.&lt;/p&gt;
+&lt;h3&gt;NetBird any good?&lt;/h3&gt;
+&lt;p&gt;Honestly I couldn&#39;t tell you.
+I thought latency would improve because of the mesh feature, but it&#39;s about the same as Tailscale from what I can remember.&lt;/p&gt;
+&lt;p&gt;But latency isn&#39;t really that important to me since all I really need from my homelab is access to my &lt;a href=&quot;https://github.com/tomsquest/docker-radicale&quot;&gt;calendar &amp;amp; contacts&lt;/a&gt;, &lt;a href=&quot;https://github.com/miniflux/v2&quot;&gt;RSS reader&lt;/a&gt;, and &lt;a href=&quot;https://github.com/sentriz/gonic&quot;&gt;music server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I will say that I&#39;ve been having some trouble getting the NetBird container to work with &lt;a href=&quot;https://www.redhat.com/en/blog/quadlet-podman&quot;&gt;Podman quadlet&lt;/a&gt;.
+I prefer using quadlets whenever I can in place of Docker.
+I recently learned about &lt;a href=&quot;https://www.redhat.com/en/blog/podman-kubernetes-secrets&quot;&gt;podman secrets&lt;/a&gt;, which has made me like Podman even more.
+But for whatever reason I can&#39;t get it to work.&lt;/p&gt;
+&lt;p&gt;This is non-working quadlet:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Unit]
+Description=NetBird container
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=netbird
+Image=docker.io/netbirdio/netbird:latest
+AddCapability=NET_ADMIN SYS_ADMIN SYS_RESOURCE
+Network=host
+Volume=%h/containers/netbird-client:/var/lib/netbird:z
+Secret=nb-sk-fedora,type=env,target=NB_SETUP_KEY
+AutoUpdate=registry
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Maybe I&#39;m not understanding Podman Secrets fully.
+Or maybe this is another case where the container has to run with root privileges.&lt;/p&gt;
+&lt;p&gt;I&#39;ll fiddle with this later.&lt;/p&gt;
+&lt;p&gt;In the meantime, the NetBird client is running using Docker Compose:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;services:
+  netbird:
+      container_name: netbird
+      hostname: fedora
+      cap_add:
+          - NET_ADMIN
+          - SYS_ADMIN
+          - SYS_RESOURCE
+      network_mode: host
+      environment:
+          - NB_SETUP_KEY=&amp;lt;SETUP-KEY&amp;gt;
+      volumes:
+          - /path/to/containers/folder/netbird-client:/var/lib/netbird
+      image: netbirdio/netbird:latest
+      restart: always
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;TL;DR&lt;/h3&gt;
+&lt;p&gt;Nothing wrong with Pangolin Tunnels, just wanted to try out Netbird + Caddy again.&lt;/p&gt;
+</content>
+  </entry>
+</feed>
