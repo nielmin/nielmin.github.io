@@ -11,12 +11,11 @@ module.exports = (config) => {
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			title: "nielmin's blog",
+			subtitle: "Blog posts from nielmin's personal site",
+			base: "https://nielmin.github.io/",
 			author: {
-				name: "Your Name",
-				email: "", // Optional
+				name: "nielmin",
 			}
 		}
   });
