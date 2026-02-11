@@ -1,6 +1,11 @@
 {
   "links": [
     {
+      "text": "RSS",
+      "img": "/static/img/rss.svg",
+      "url": "https://nielmin.github.io/feed.xml"
+    },
+    {
       "text": "GitHub",
       "img": "/static/img/github.svg",
       "url": "https://github.com/nielmin"
