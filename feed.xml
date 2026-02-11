@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title>nielmin&#39;s blog</title>
   <subtitle>Blog posts from nielmin&#39;s personal site</subtitle>
-  <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/feed.xml" rel="self" />
-  <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/" />
+  <link href="https://nielmin.github.io/feed.xml" rel="self" />
+  <link href="https://nielmin.github.io/" />
   <updated>2025-10-30T00:00:00Z</updated>
-  <id>https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/</id>
+  <id>https://nielmin.github.io/</id>
   <author>
     <name>nielmin</name>
   </author>
   <entry>
     <title>Don&#39;t use Linux if you hate Microsoft</title>
-    <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/" />
+    <link href="https://nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/" />
     <updated>2025-10-03T00:00:00Z</updated>
-    <id>https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/</id>
+    <id>https://nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/</id>
     <content type="html">&lt;p&gt;With the end of Windows 10 coming in 2 weeks, people have a couple of options:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Stick with Windows 10 until they&#39;re forced to upgrade (like how some did with Windows 7).&lt;/li&gt;
@@ -81,9 +81,9 @@ And in the end, the scriptablility of &lt;code&gt;rsync&lt;/code&gt; won, and I 
   </entry>
   <entry>
     <title>Moving on from Pangolin Tunnels</title>
-    <link href="https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/moving-on-from-pangolin-tunnels/" />
+    <link href="https://nielmin.github.io/blog/moving-on-from-pangolin-tunnels/" />
     <updated>2025-10-30T00:00:00Z</updated>
-    <id>https://nielmin.github.io/https:/github.com/nielmin/nielmin.github.io/blog/moving-on-from-pangolin-tunnels/</id>
+    <id>https://nielmin.github.io/blog/moving-on-from-pangolin-tunnels/</id>
     <content type="html">&lt;p&gt;For quite a while now I&#39;ve been using &lt;a href=&quot;https://github.com/fosrl/pangolin&quot;&gt;Pangolin Tunnels&lt;/a&gt; on a VPS to access my homelab services.
 It&#39;s been pretty solid for some months now, and it is a great FOSS alternative to Cloudflare Tunnels.
 But me being me, I wanted to try out something else.&lt;/p&gt;
