@@ -7,7 +7,7 @@
     "clean": "rm -rf ./dist",
     "build": "npm run clean && npx @11ty/eleventy",
     "start": "npm run clean && npx @11ty/eleventy --serve",
-    "deploy": "npm run clean && npx @11ty/eleventy"
+    "deploy": "npm run build"
   },
   "repository": {
     "type": "git",
