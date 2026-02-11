@@ -21,6 +21,8 @@ module.exports = (config) => {
   });
   config.addPassthroughCopy("static");
 
+  config.addPassthroughCopy({ "static/icons/favicon": "/" });
+
   config.addPassthroughCopy("static/icons");
   config.addWatchTarget("static/icons");
 
