@@ -4,7 +4,7 @@
   <subtitle>Blog posts from nielmin&#39;s personal site</subtitle>
   <link href="https://nielmin.github.io/feed.xml" rel="self" />
   <link href="https://nielmin.github.io/" />
-  <updated>2025-10-30T00:00:00Z</updated>
+  <updated>2026-02-13T00:00:00Z</updated>
   <id>https://nielmin.github.io/</id>
   <author>
     <name>nielmin</name>
@@ -143,6 +143,50 @@ Or maybe this is another case where the container has to run with root privilege
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;TL;DR&lt;/h3&gt;
 &lt;p&gt;Nothing wrong with Pangolin Tunnels, just wanted to try out Netbird + Caddy again.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>No more Docker in my Homelab</title>
+    <link href="https://nielmin.github.io/blog/no-more-docker-in-my-homelab/" />
+    <updated>2026-02-13T00:00:00Z</updated>
+    <id>https://nielmin.github.io/blog/no-more-docker-in-my-homelab/</id>
+    <content type="html">&lt;p&gt;For 2 years now, I&#39;ve been using and running all my containers with &lt;a href=&quot;https://www.redhat.com/en/blog/quadlet-podman&quot;&gt;Podman Quadlets&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It it my preferred way of runnig containers, and has replaced Docker and Docker Compose in my homelab.&lt;/p&gt;
+&lt;p&gt;Personally, Podman Quadlets just jive with the way I like to do things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each container is its own rootless, systemd service (vs. Docker&#39;s rootful daemon).&lt;/li&gt;
+&lt;li&gt;Each container is declared using systemd syntax (vs. Docker Compose YAML).&lt;/li&gt;
+&lt;li&gt;Each container can be managed and viewed with SystemD &lt;code&gt;systemctl&lt;/code&gt; and &lt;code&gt;journalctl&lt;/code&gt; commands.&lt;/li&gt;
+&lt;li&gt;Volumes, Networks, and Pods can be created and declared text files.&lt;/li&gt;
+&lt;li&gt;Containers in a pod can be re/started all at once using &lt;code&gt;systemctl --user re/start&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But the one thing that kept me back (and Docker installed) was &lt;a href=&quot;https://immich.app/&quot;&gt;Immich&lt;/a&gt;, a self-hosted Google Photos replacement.&lt;/p&gt;
+&lt;h2&gt;Not my first rodeo&lt;/h2&gt;
+&lt;p&gt;A couple of months ago I tried to move Immich to Podman quadlets.&lt;/p&gt;
+&lt;p&gt;Converting Immich&#39;s &lt;code&gt;docker-compose.yml&lt;/code&gt; and &lt;code&gt;example.env&lt;/code&gt; to the &lt;code&gt;podman quadlet&lt;/code&gt; equivalent wasn&#39;t hard, just tedious.
+Factoring out each individual app into its own &lt;code&gt;.container&lt;/code&gt; quadlet was pretty straightforward, albeit a might messy.&lt;/p&gt;
+&lt;p&gt;A &lt;code&gt;.container&lt;/code&gt; quadlet can only have one container declared in it, and SystemD does not support string interpolation (no &lt;code&gt;${UPLOAD_LOCATION}&lt;/code&gt; allowed).&lt;/p&gt;
+&lt;p&gt;So the 2 Docker files (&lt;code&gt;docker-compose.yml&lt;/code&gt; and &lt;code&gt;example.env&lt;/code&gt;) became 5 podman quadlets, the fifth being an &lt;code&gt;immich.pod&lt;/code&gt; to group all Immich containers together:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;immich-server.container&lt;/code&gt; for the Immich server&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;immich-db.container&lt;/code&gt; for the Postgres database&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;immich-redis.container&lt;/code&gt; for the Redis container&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;immich-ml.container&lt;/code&gt; for the machine learning container&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;immich.pod&lt;/code&gt; to create a Pod for the containers above&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(The environment variables are hard-coded in their respective &lt;code&gt;.container&lt;/code&gt; files.)&lt;/p&gt;
+&lt;p&gt;And &lt;em&gt;almost&lt;/em&gt; everything worked.&lt;/p&gt;
+&lt;h2&gt;What happened to my thumbnails?&lt;/h2&gt;
+&lt;p&gt;For whatever reason, I could not get thumbnail generation to work, even though both OCI runtimes were runnig on the same host.&lt;/p&gt;
+&lt;p&gt;I spent a couple of hours trying to troubleshoot the issue, from basic Samba permissions to archaic SELinux flags, and still could not find the solution.&lt;/p&gt;
+&lt;p&gt;What I thought would be a relatively simple transition turned out to be a very frustrating reality.&lt;/p&gt;
+&lt;p&gt;So I admitted defeat and reconciled that Docker was going to have to stay if I wanted to use Immich (until I eventually move to NixOS).&lt;/p&gt;
+&lt;h2&gt;Second time&#39;s the charm&lt;/h2&gt;
+&lt;p&gt;After having a frustrating time with my NixOS config, I decided to try again with Immich and Podman Quadlet.&lt;/p&gt;
+&lt;p&gt;And I&#39;m happy to report that I finally got rid of Docker from my homelab.&lt;/p&gt;
+&lt;p&gt;I&#39;m not entirely sure what changed between then and now.
+Maybe it was because Immich released V2, or maybe &lt;code&gt;podman&lt;/code&gt; fixed something in one of their updates.&lt;/p&gt;
+&lt;p&gt;Regardless, thumbnails generate as they should on my Samba share, and I am Docker free.&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/css/concrete.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
+  <title>No more Docker in my Homelab | nielmin</title>
+</head>
+
+  <header>
+	<nav aria-label="Primary">
+		<ul>
+			<li><a href="/">nielmin</a></li>
+		</ul>
+		<ul>
+			
+			<li><a href="/blog/">Blog</a></li>
+			
+			<li><a href="/uses/">Uses</a></li>
+			
+			<li><a href="/now/">Now</a></li>
+			
+		</ul>
+	</nav>
+</header>
+<body>
+  <main class="page-body" tabindex="-1" id="main-content">
+<section>
+
+  <h2>No more Docker in my Homelab</h2>
+  <section>
+    <i>
+      Running Immich with Podman Quadlets
+    </i>
+  </section>
+
+  <section>
+    <time datetime="2026-02-13" data-pagefind-sort="date">13 Feb 2026</time>
+  </section>
+</section>
+
+<article>
+  <p>For 2 years now, I've been using and running all my containers with <a href="https://www.redhat.com/en/blog/quadlet-podman">Podman Quadlets</a>.</p>
+<p>It it my preferred way of runnig containers, and has replaced Docker and Docker Compose in my homelab.</p>
+<p>Personally, Podman Quadlets just jive with the way I like to do things:</p>
+<ul>
+<li>Each container is its own rootless, systemd service (vs. Docker's rootful daemon).</li>
+<li>Each container is declared using systemd syntax (vs. Docker Compose YAML).</li>
+<li>Each container can be managed and viewed with SystemD <code>systemctl</code> and <code>journalctl</code> commands.</li>
+<li>Volumes, Networks, and Pods can be created and declared text files.</li>
+<li>Containers in a pod can be re/started all at once using <code>systemctl --user re/start</code>.</li>
+</ul>
+<p>But the one thing that kept me back (and Docker installed) was <a href="https://immich.app/">Immich</a>, a self-hosted Google Photos replacement.</p>
+<h2>Not my first rodeo</h2>
+<p>A couple of months ago I tried to move Immich to Podman quadlets.</p>
+<p>Converting Immich's <code>docker-compose.yml</code> and <code>example.env</code> to the <code>podman quadlet</code> equivalent wasn't hard, just tedious.
+Factoring out each individual app into its own <code>.container</code> quadlet was pretty straightforward, albeit a might messy.</p>
+<p>A <code>.container</code> quadlet can only have one container declared in it, and SystemD does not support string interpolation (no <code>${UPLOAD_LOCATION}</code> allowed).</p>
+<p>So the 2 Docker files (<code>docker-compose.yml</code> and <code>example.env</code>) became 5 podman quadlets, the fifth being an <code>immich.pod</code> to group all Immich containers together:</p>
+<ol>
+<li><code>immich-server.container</code> for the Immich server</li>
+<li><code>immich-db.container</code> for the Postgres database</li>
+<li><code>immich-redis.container</code> for the Redis container</li>
+<li><code>immich-ml.container</code> for the machine learning container</li>
+<li><code>immich.pod</code> to create a Pod for the containers above</li>
+</ol>
+<p>(The environment variables are hard-coded in their respective <code>.container</code> files.)</p>
+<p>And <em>almost</em> everything worked.</p>
+<h2>What happened to my thumbnails?</h2>
+<p>For whatever reason, I could not get thumbnail generation to work, even though both OCI runtimes were runnig on the same host.</p>
+<p>I spent a couple of hours trying to troubleshoot the issue, from basic Samba permissions to archaic SELinux flags, and still could not find the solution.</p>
+<p>What I thought would be a relatively simple transition turned out to be a very frustrating reality.</p>
+<p>So I admitted defeat and reconciled that Docker was going to have to stay if I wanted to use Immich (until I eventually move to NixOS).</p>
+<h2>Second time's the charm</h2>
+<p>After having a frustrating time with my NixOS config, I decided to try again with Immich and Podman Quadlet.</p>
+<p>And I'm happy to report that I finally got rid of Docker from my homelab.</p>
+<p>I'm not entirely sure what changed between then and now.
+Maybe it was because Immich released V2, or maybe <code>podman</code> fixed something in one of their updates.</p>
+<p>Regardless, thumbnails generate as they should on my Samba share, and I am Docker free.</p>
+
+</article>
+</main>
+  <footer>
+	<small>
+		nielmin © 2026
+		 • <a href="https://nielmin.github.io/feed.xml">RSS</a>
+		 • <a href="https://github.com/nielmin">GitHub</a>
+		 • <a href="mailto:danhwa13@gmail.com">Email</a>
+		
+	</small>
+</footer>
+
+
+</body>
+
+</html>
