@@ -1,13 +1,13 @@
 :root {
   --fg: #1a1a1a;
-  --bg: #fafafa;
+  --bg: #e2e2e2;
   --font: Atkinson Hyperlegible Next, Arial, sans-serif;
   --font-h: Atkinson Hyperlegible Next, Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fg: #fafafa;
+    --fg: #e2e2e2;
     --bg: #1a1a1a;
   }
 }
