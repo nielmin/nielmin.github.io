@@ -4,6 +4,7 @@
  * Set universal color, main width, font and border-radius variables
  */
 
+/**
 :root {
   --fg: #111;
   --bg: #fff;
@@ -12,17 +13,20 @@
   --main-width: 640px;
   --radius: 0px;
 }
+*/
 
 /**
  * Invert the colors if the user has dark mode activated.
  */
 
+/**
 @media (prefers-color-scheme: dark) {
   :root {
     --fg: #fff;
     --bg: #111;
   }
 }
+*/
 
 /**
  * 1. Modify the base font-size to 1.25rem, to make everything larger.
@@ -61,9 +65,11 @@ body {
  * Set the link color to black
  */
 
+/**
 a {
   color: var(--fg);
 }
+*/
 
 /**
  * 1. Stretch figure to full width of the section.

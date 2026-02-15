@@ -1,13 +1,28 @@
-:root {
-  --fg: #1a1a1a;
-  --bg: #e2e2e2;
-  --font: Atkinson Hyperlegible Next, Arial, sans-serif;
-  --font-h: Atkinson Hyperlegible Next, Arial, sans-serif;
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: local("/static/fonts/AtkinsonHyperlegibleNextVF-Variable.ttf") format("ttf");
+  font-weight: 100 900;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fg: #e2e2e2;
-    --bg: #1a1a1a;
+:root {
+  --color-light: #e2e2e2;
+  --color-dark: #1a1a1a;
+  --color-accent: #FF9F8A;
+  color-scheme: light dark;
+  color: light-dark(var(--color-dark), var(--color-light));
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-weight: 400;
+  --main-width: 640px;
+  --radius: 0px;
+}
+
+a {
+  color: var(--color-light);
+}
+
+article {
+  a {
+    color: var(--color-accent);
   }
 }
