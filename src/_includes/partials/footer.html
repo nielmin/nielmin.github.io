@@ -1,7 +1,14 @@
 <footer>
 	<small>
-		nielmin © 2026
-		{% for link in socials.links %} • <a href="{{ link.url }}">{{ link.text }}</a>
+		{% for link in socials.links %}
+    {% if loop.first %}
+    <a href="{{ link.url }}">{{ link.text }}</a>
+    {% else %}
+    • <a href="{{ link.url }}">{{ link.text }}</a>
+    {% endif %}
 		{% endfor %}
 	</small>
+  <p>
+		nielmin © 2026
+  </p>
 </footer>
