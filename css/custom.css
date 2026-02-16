@@ -8,7 +8,8 @@
 :root {
   --color-light: #e2e2e2;
   --color-dark: #1a1a1a;
-  --color-accent: #FF9F8A;
+  --color-orange: #FF9F8A;
+  --color-cyan: #5ABFB5;
   color-scheme: light dark;
   color: light-dark(var(--color-dark), var(--color-light));
   font-family: "Atkinson Hyperlegible Next", sans-serif;
@@ -23,6 +24,10 @@ a {
 
 article {
   a {
-    color: var(--color-accent);
+    color: var(--color-orange);
   }
+}
+
+h1 {
+  color: var(--color-cyan);
 }
