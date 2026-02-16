@@ -36,3 +36,8 @@ article {
 h1 {
   color: light-dark(lch(from var(--color-yellow) calc(l - 15) c h), var(--color-yellow));
 }
+
+body > header {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
