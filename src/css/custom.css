@@ -19,6 +19,10 @@
   --radius: 0px;
 }
 
+header {
+  text-align: center;
+}
+
 a {
   color: light-dark(var(--color-dark), var(--color-light));
 }
