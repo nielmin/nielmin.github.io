@@ -2,6 +2,7 @@
 
 ## TODO
 - [ ] Custom classless CSS based off of [concrete.css](https://concrete.style/)
+- [ ] Add dark-mode toggle
 - [ ] Incorporate tags in posts
 
 ## DONE
