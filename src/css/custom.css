@@ -27,3 +27,7 @@ article {
     color: var(--color-orange);
   }
 }
+
+h1 {
+  color: var(--color-cyan);
+}
