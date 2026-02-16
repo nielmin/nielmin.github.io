@@ -1,7 +1,7 @@
 ---
 title: 'Gear & Software'
 summary: "What I'm currently using."
-layout: 'layouts/about.html'
+layout: 'layouts/page.html'
 permalink: '/uses/index.html'
 ---
 
