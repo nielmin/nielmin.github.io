@@ -1,7 +1,7 @@
 <div class="post-list">
   <ul>
     {% for post in posts %}
-    <li class="postlist-date">{{ post.date | readableDate }} - <a href="{{ post.url }}" class="postlist-link">
+    <li class="postlist-date">{{ post.date | htmlDateString }} - <a href="{{ post.url }}" class="postlist-link">
         {{post.data.title}}</a>
     </li>
     {% endfor %}
