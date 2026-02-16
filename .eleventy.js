@@ -19,15 +19,13 @@ module.exports = (config) => {
 			}
 		}
   });
-  config.addPassthroughCopy("static");
+  config.addWatchTarget("static");
 
   config.addPassthroughCopy({ "static/icons/favicon": "/" });
 
-  config.addPassthroughCopy("static/icons");
-  config.addWatchTarget("static/icons");
+  config.addPassthroughCopy({ "static/icons": "/icons" });
 
   config.addPassthroughCopy({ "static/img": "/img" });
-  config.addWatchTarget("static/img");
 
   config.addPassthroughCopy("src/css");
   config.addWatchTarget("src/css/");
