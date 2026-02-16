@@ -43,6 +43,14 @@ article {
   a {
     color: light-dark(lch(from var(--color-orange) calc(l - 10) c h), var(--color-orange));
   }
+  img {
+    transform: scale(1);
+    transition: all 0.2s ease;
+    border-radius: 2%
+  }
+  img:hover {
+    transform: scale(1.05);
+  }
 }
 
 h1 {
