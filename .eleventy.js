@@ -26,7 +26,7 @@ module.exports = (config) => {
   config.addPassthroughCopy("static/icons");
   config.addWatchTarget("static/icons");
 
-  config.addPassthroughCopy("static/img");
+  config.addPassthroughCopy({ "static/img": "/img" });
   config.addWatchTarget("static/img");
 
   config.addPassthroughCopy("src/css");
