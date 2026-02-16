@@ -19,12 +19,24 @@
   --radius: 0px;
 }
 
-header {
-  text-align: center;
-}
-
 a {
   color: light-dark(var(--color-dark), var(--color-light));
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: .1rem;
+}
+
+header {
+  text-align: center;
+  ul {
+    a:hover {
+      color: light-dark(lch(from var(--color-cyan) calc(l - 10) c h), var(--color-cyan));
+    }
+  }
 }
 
 article {
