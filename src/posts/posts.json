@@ -1,4 +1,5 @@
 {
+  "date": "git Created",
   "layout": "layouts/post.html",
   "permalink": "/blog/{{ title | slugify }}/index.html"
 }
