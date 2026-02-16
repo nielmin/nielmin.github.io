@@ -1,15 +1,15 @@
 {
   "items": [
     {
-      "text": "Blog",
+      "text": "blog",
       "url": "/blog/"
     },
     {
-      "text": "Uses",
+      "text": "uses",
       "url": "/uses/"
     },
     {
-      "text": "Now",
+      "text": "now",
       "url": "/now/"
     }
   ]
