@@ -9,6 +9,7 @@
   --color-light: #e2e2e2;
   --color-dark: #1a1a1a;
   --color-orange: #FF9F8A;
+  --color-yellow: #FFF59D;
   --color-cyan: #5ABFB5;
   color-scheme: light dark;
   color: light-dark(var(--color-dark), var(--color-light));
@@ -19,15 +20,36 @@
 }
 
 a {
-  color: var(--color-light);
+  color: light-dark(var(--color-dark), var(--color-light));
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: .1rem;
+}
+
+header {
+  text-align: center;
+  ul {
+    a:hover {
+      color: light-dark(lch(from var(--color-cyan) calc(l - 10) c h), var(--color-cyan));
+    }
+  }
 }
 
 article {
   a {
-    color: var(--color-orange);
+    color: light-dark(lch(from var(--color-orange) calc(l - 10) c h), var(--color-orange));
   }
 }
 
 h1 {
-  color: var(--color-cyan);
+  color: light-dark(lch(from var(--color-yellow) calc(l - 15) c h), var(--color-yellow));
+}
+
+body > header {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 }
