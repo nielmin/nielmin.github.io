@@ -1,7 +1,7 @@
 ---
 title: 'Moving on from Pangolin Tunnels'
 summary: 'Onto better heights with NetBird'
-date: '2025-10-30'
+modified: ''
 tags: [ 'Selfhost', 'Linux' ]
 ---
 
