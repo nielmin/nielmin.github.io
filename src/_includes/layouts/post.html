@@ -1,19 +1,23 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<section>
 
   <h1>{{ title }}</h1>
-  <section>
-    <i>
-      {{ summary }}
-    </i>
-  </section>
+  <p>
+  <i>
+  Created:
+  <time datetime="{{ page.date | htmlDateString }}" data-pagefind-sort="date">{{ page.date | htmlDateString }}</time>
+  {% if modified %}
+  •
+  Last Modified:
+  <time datetime="{{ modified }}" data-pagefind-sort="date">{{ modified }}</time>
+  {% endif %}
+  </i>
+  </p>
 
-  <section>
-    <time datetime="{{ page.date | htmlDateString }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
-  </section>
-</section>
+  <blockquote>
+    {{ summary }}
+  </blockquote>
 
 <article>
   {{ content | safe }}
