@@ -4,7 +4,7 @@
   <subtitle>Blog posts from nielmin&#39;s personal site</subtitle>
   <link href="https://nielmin.github.io/feed.xml" rel="self" />
   <link href="https://nielmin.github.io/" />
-  <updated>2026-02-16T16:38:43Z</updated>
+  <updated>2026-02-21T03:53:33Z</updated>
   <id>https://nielmin.github.io/</id>
   <author>
     <name>nielmin</name>
@@ -12,7 +12,7 @@
   <entry>
     <title>Don&#39;t use Linux if you hate Microsoft</title>
     <link href="https://nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/" />
-    <updated>2026-02-16T16:38:43Z</updated>
+    <updated>2026-02-21T03:53:33Z</updated>
     <id>https://nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/</id>
     <content type="html">&lt;p&gt;With the end of Windows 10 coming in 2 weeks, people have a couple of options:&lt;/p&gt;
 &lt;ol&gt;
@@ -82,7 +82,7 @@ And in the end, the scriptablility of &lt;code&gt;rsync&lt;/code&gt; won, and I 
   <entry>
     <title>Moving on from Pangolin Tunnels</title>
     <link href="https://nielmin.github.io/blog/moving-on-from-pangolin-tunnels/" />
-    <updated>2026-02-16T16:38:43Z</updated>
+    <updated>2026-02-21T03:53:33Z</updated>
     <id>https://nielmin.github.io/blog/moving-on-from-pangolin-tunnels/</id>
     <content type="html">&lt;p&gt;For quite a while now I&#39;ve been using &lt;a href=&quot;https://github.com/fosrl/pangolin&quot;&gt;Pangolin Tunnels&lt;/a&gt; on a VPS to access my homelab services.
 It&#39;s been pretty solid for some months now, and it is a great FOSS alternative to Cloudflare Tunnels.
@@ -148,7 +148,7 @@ Or maybe this is another case where the container has to run with root privilege
   <entry>
     <title>No more Docker in my Homelab</title>
     <link href="https://nielmin.github.io/blog/no-more-docker-in-my-homelab/" />
-    <updated>2026-02-16T16:38:43Z</updated>
+    <updated>2026-02-21T03:53:33Z</updated>
     <id>https://nielmin.github.io/blog/no-more-docker-in-my-homelab/</id>
     <content type="html">&lt;p&gt;For 2 years now, I&#39;ve been using and running all my containers with &lt;a href=&quot;https://www.redhat.com/en/blog/quadlet-podman&quot;&gt;Podman Quadlets&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It it my preferred way of runnig containers, and has replaced Docker and Docker Compose in my homelab.&lt;/p&gt;
@@ -187,6 +187,44 @@ Factoring out each individual app into its own &lt;code&gt;.container&lt;/code&g
 &lt;p&gt;I&#39;m not entirely sure what changed between then and now.
 Maybe it was because Immich released V2, or maybe &lt;code&gt;podman&lt;/code&gt; fixed something in one of their updates.&lt;/p&gt;
 &lt;p&gt;Regardless, thumbnails generate as they should on my Samba share, and I am Docker free.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Self-hosting is simpler without hoarding</title>
+    <link href="https://nielmin.github.io/blog/self-hosting-is-simpler-without-hoarding/" />
+    <updated>2026-02-21T03:53:33Z</updated>
+    <id>https://nielmin.github.io/blog/self-hosting-is-simpler-without-hoarding/</id>
+    <content type="html">&lt;p&gt;I recently noticed there&#39;s a lot of &lt;a href=&quot;https://github.com/Ravencentric/awesome-arr&quot;&gt;effort&lt;/a&gt; put in a specific area in self-hosting: &lt;strong&gt;media&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;And I think it&#39;s a bit unecessary.&lt;/p&gt;
+&lt;p&gt;Fhe value of self-hosting is becoming independent and having control of your data and privacy.
+It is, first and foremost, about having access to tools you control that augment your digital experience without violating your rights.
+Whether that&#39;s having an adblocker on your home network or a Frigate-based CCTV setup, your hosted services should add some convenience to your life.
+Otherwise, what&#39;s the point (besides learning).&lt;/p&gt;
+&lt;p&gt;However, the community (&lt;a href=&quot;https://reddit.com/r/selfhosted&quot;&gt;r/selfhosted&lt;/a&gt;) seems to over emphasize the &amp;quot;utility&amp;quot; of having your own Netflix.
+I don&#39;t use any &lt;code&gt;-arr&lt;/code&gt; program in my own homelab, but it does seem a little excessive when a good chunk of someone&#39;s homelab is dedicated to media collection, organization, and consumption.&lt;/p&gt;
+&lt;p&gt;I&#39;m also in the minority when I say this, but I don&#39;t rewatch/replay a lot of media.
+I also don&#39;t do the whole &#39;passively watching a TV show or movie in the background on the 2nd monitor while I do X&#39; (cause multi-tasking is a myth).&lt;/p&gt;
+&lt;p&gt;When I decide to spend time to watch something, I like to be very intentional.
+It is my way of showing respect to the creators&#39; of said TV show/movie and their creation.
+If I&#39;m going to spend 2 hours watching a film or episodes, I might as well pay attention, get immersed, and have a good time.
+Otherwise I&#39;m wasting time and &amp;quot;disrespecting&amp;quot; the film/show.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To clarify, when I say something is a &amp;quot;waste of time&amp;quot;, I&#39;m not saying that the time you spent watching something could&#39;ve been spent doing something more &amp;quot;productive&amp;quot;.
+At least in this context, the use is a bit more literal and akin to &amp;quot;unecessary excess&amp;quot;.
+For example, if I&#39;m on my phone reading something and not focusing on the film, both actions are being done without &lt;em&gt;intention&lt;/em&gt; (therefore being wasteful).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As a result, I don&#39;t tend to keep/hoard a lot of media stored on my NAS.
+Once I&#39;ve finished watching a film or show, I&#39;ll seed until the ratio reaches &lt;code&gt;2.0&lt;/code&gt; and delete it from my drives.
+For me, any subsequent (re)watch of is a waste (of time, hard drive space, attention, etc) because I should&#39;ve paid attention and gotten the most out of it the first time.&lt;/p&gt;
+&lt;p&gt;Even the stuff I do save on my NAS (i.e. favorites) I haven&#39;t watched in a long time.
+Simply put, why would I want to rewatch a favorite of mine if I don&#39;t have the time to give it the same attention and focus as before?&lt;/p&gt;
+&lt;p&gt;I know my &amp;quot;relationship&amp;quot; with media is a weird one, but as a consequence my homelab is very lean and utilitarean.
+It is not built around media consumption, but focused on independent tools that will help in my daily life.&lt;/p&gt;
+&lt;p&gt;For example, I recently found out about &lt;a href=&quot;https://github.com/Bubka/2FAuth&quot;&gt;2fauth&lt;/a&gt;, a self-hosted 2FA web app.
+It is a very simple app wrtten in PHP with SQLite as a database, but it is incredibly useful.
+By hosting your own 2FA, it mitigates the fear of losing your phone and by extension your TOTP codes.
+You can access them anywhere from any device with a browser, and aren&#39;t tethered to your smartphone.&lt;/p&gt;
+&lt;p&gt;In conclusion, I don&#39;t understand the need to have a massive media library, and I find all the effort someone puts into media consumption and storage a bit excessive.&lt;/p&gt;
 </content>
   </entry>
 </feed>
