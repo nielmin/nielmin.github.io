@@ -1,5 +1,5 @@
 <footer>
-	<small>
+	<p>
 		{% for link in socials.links %}
     {% if loop.first %}
     <a href="{{ link.url }}">{{ link.text }}</a>
@@ -7,7 +7,7 @@
     • <a href="{{ link.url }}">{{ link.text }}</a>
     {% endif %}
 		{% endfor %}
-	</small>
+	</p>
   <p>
 		nielmin © 2026
   </p>
