@@ -61,3 +61,10 @@ body > header {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+footer {
+  font-size: large;
+  p {
+    margin: 0;
+  }
+}
