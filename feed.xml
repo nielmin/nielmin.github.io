@@ -4,7 +4,7 @@
   <subtitle>Blog posts from nielmin&#39;s personal site</subtitle>
   <link href="https://nielmin.github.io/feed.xml" rel="self" />
   <link href="https://nielmin.github.io/" />
-  <updated>2026-02-22T10:30:16Z</updated>
+  <updated>2026-02-22T11:26:30Z</updated>
   <id>https://nielmin.github.io/</id>
   <author>
     <name>nielmin</name>
@@ -12,7 +12,7 @@
   <entry>
     <title>Don&#39;t use Linux if you hate Microsoft</title>
     <link href="https://nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/" />
-    <updated>2026-02-22T10:30:16Z</updated>
+    <updated>2026-02-22T11:26:30Z</updated>
     <id>https://nielmin.github.io/blog/dont-use-linux-if-you-hate-microsoft/</id>
     <content type="html">&lt;p&gt;With the end of Windows 10 coming in 2 weeks, people have a couple of options:&lt;/p&gt;
 &lt;ol&gt;
@@ -82,7 +82,7 @@ And in the end, the scriptablility of &lt;code&gt;rsync&lt;/code&gt; won, and I 
   <entry>
     <title>Moving on from Pangolin Tunnels</title>
     <link href="https://nielmin.github.io/blog/moving-on-from-pangolin-tunnels/" />
-    <updated>2026-02-22T10:30:16Z</updated>
+    <updated>2026-02-22T11:26:30Z</updated>
     <id>https://nielmin.github.io/blog/moving-on-from-pangolin-tunnels/</id>
     <content type="html">&lt;p&gt;For quite a while now I&#39;ve been using &lt;a href=&quot;https://github.com/fosrl/pangolin&quot;&gt;Pangolin Tunnels&lt;/a&gt; on a VPS to access my homelab services.
 It&#39;s been pretty solid for some months now, and it is a great FOSS alternative to Cloudflare Tunnels.
@@ -148,7 +148,7 @@ Or maybe this is another case where the container has to run with root privilege
   <entry>
     <title>No more Docker in my Homelab</title>
     <link href="https://nielmin.github.io/blog/no-more-docker-in-my-homelab/" />
-    <updated>2026-02-22T10:30:16Z</updated>
+    <updated>2026-02-22T11:26:30Z</updated>
     <id>https://nielmin.github.io/blog/no-more-docker-in-my-homelab/</id>
     <content type="html">&lt;p&gt;For 2 years now, I&#39;ve been using and running all my containers with &lt;a href=&quot;https://www.redhat.com/en/blog/quadlet-podman&quot;&gt;Podman Quadlets&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It it my preferred way of runnig containers, and has replaced Docker and Docker Compose in my homelab.&lt;/p&gt;
@@ -192,7 +192,7 @@ Maybe it was because Immich released V2, or maybe &lt;code&gt;podman&lt;/code&gt
   <entry>
     <title>Self-hosting is simpler without hoarding</title>
     <link href="https://nielmin.github.io/blog/self-hosting-is-simpler-without-hoarding/" />
-    <updated>2026-02-22T10:30:16Z</updated>
+    <updated>2026-02-22T11:26:30Z</updated>
     <id>https://nielmin.github.io/blog/self-hosting-is-simpler-without-hoarding/</id>
     <content type="html">&lt;p&gt;I recently noticed there&#39;s a lot of &lt;a href=&quot;https://github.com/Ravencentric/awesome-arr&quot;&gt;effort&lt;/a&gt; put in a specific area in self-hosting: &lt;strong&gt;media&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;And I think it&#39;s a bit unecessary.&lt;/p&gt;

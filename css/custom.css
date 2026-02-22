@@ -19,6 +19,18 @@
   --radius: 0px;
 }
 
+body {
+  margin: 0; /* 1 */
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+main {
+  height: 100%;
+}
+
 a {
   color: light-dark(var(--color-dark), var(--color-light));
   transition: color 0.3s ease;
@@ -54,17 +66,18 @@ article {
 }
 
 h1 {
-  color: light-dark(lch(from var(--color-yellow) calc(l - 15) c h), var(--color-yellow));
-}
-
-body > header {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  color: light-dark(lch(from var(--color-yellow) calc(l - 10) calc(c + 50) calc(h - 5)), var(--color-yellow));
 }
 
 footer {
+  padding: 2rem;
   font-size: large;
   p {
     margin: 0;
   }
+}
+
+blockquote {
+  font-weight: 250;
+  font-style: italic;
 }
