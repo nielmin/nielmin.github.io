@@ -141,14 +141,6 @@ input[type="submit"]:disabled{
 }
 
 /**
- * Set the list bullet to square.
- */
-
-ul {
-  list-style: square;
-}
-
-/**
  * Set a margin around the navigation bar
  */
 nav {
