@@ -19,6 +19,18 @@
   --radius: 0px;
 }
 
+body {
+  margin: 0; /* 1 */
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+main {
+  height: 100%;
+}
+
 a {
   color: light-dark(var(--color-dark), var(--color-light));
   transition: color 0.3s ease;
