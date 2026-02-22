@@ -66,12 +66,7 @@ article {
 }
 
 h1 {
-  color: light-dark(lch(from var(--color-yellow) calc(l - 15) c h), var(--color-yellow));
-}
-
-body > header {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  color: light-dark(lch(from var(--color-yellow) calc(l - 10) calc(c + 50) calc(h - 5)), var(--color-yellow));
 }
 
 footer {
