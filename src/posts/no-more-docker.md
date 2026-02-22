@@ -1,6 +1,7 @@
 ---
 title: 'No more Docker in my Homelab'
 summary: 'Running Immich with Podman Quadlets'
+date: '2026-02-14' 
 modified: '' 
 tags: [ 'Selfhost', 'Linux' ]
 ---

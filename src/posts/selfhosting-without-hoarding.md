@@ -1,5 +1,6 @@
 ---
 title: 'Self-hosting is simpler without hoarding'
+date: '2026-02-21'
 modified: ''
 tags: [ 'Selfhost', 'Linux' ]
 ---
