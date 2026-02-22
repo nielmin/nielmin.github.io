@@ -15,9 +15,11 @@
   </i>
   </p>
 
+  {% if summary %}
   <blockquote>
     {{ summary }}
   </blockquote>
+  {% endif %}
 
 <article>
   {{ content | safe }}
