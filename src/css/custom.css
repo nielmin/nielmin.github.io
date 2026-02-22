@@ -76,3 +76,8 @@ footer {
     margin: 0;
   }
 }
+
+blockquote {
+  font-weight: 250;
+  font-style: italic;
+}
