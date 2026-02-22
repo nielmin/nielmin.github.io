@@ -81,3 +81,7 @@ blockquote {
   font-weight: 250;
   font-style: italic;
 }
+
+ul {
+  list-style: none;
+}
