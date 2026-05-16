@@ -23,7 +23,7 @@
           packages = with pkgs; [
             nodejs_24
             vscode-langservers-extracted
-            nodePackages.prettier
+            prettier
           ];
         };
 
