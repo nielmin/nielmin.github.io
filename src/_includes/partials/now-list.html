@@ -1,0 +1,7 @@
+  <ul>
+    <li>
+    {% for post in posts %}
+      <a href={{ post.date | htmlDateString }}>{{ post.date | htmlDateString }}</a>
+    </li> 
+    {% endfor %}
+  </ul>
