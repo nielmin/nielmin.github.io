@@ -33,12 +33,12 @@ module.exports = (config) => {
   });
 
   config.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+    return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat("dd LLL yyyy");
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   config.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy.LL.dd');
+    return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat('yyyy.LL.dd');
   });
 
   // Returns a collection of blog posts in reverse order
