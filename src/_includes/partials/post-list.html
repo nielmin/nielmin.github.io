@@ -1,4 +1,3 @@
-<div class="post-list">
   <ul>
     {% for post in posts %}
     <li class="postlist-date">{{ post.date | htmlDateString }} - <a href="{{ post.url }}" class="postlist-link">
@@ -6,4 +5,3 @@
     </li>
     {% endfor %}
   </ul>
-</div>
