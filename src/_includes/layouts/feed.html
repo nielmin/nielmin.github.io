@@ -2,6 +2,10 @@
 
 {% block content %}
 {% if content %}
+<h3>
+  As of
+  <time datetime="{{ page.date | isoDate }}"data-pagefind-sort="date">{{ page.date | isoDate }}</time>, I:
+</h3>
 <article>
 {{ content | safe }}
 </article>
