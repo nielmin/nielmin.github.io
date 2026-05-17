@@ -80,8 +80,8 @@ body > header,
 body > main,
 body > footer {
   margin: auto; /* 1 */
-  min-width: 80vw; /* 2 */
-  max-width: 80vw;
+  min-width: 50vw; /* 2 */
+  max-width: 50vw;
   top-padding: 10vh;
   bottom-padding: 10vh;
 }
