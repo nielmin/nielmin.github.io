@@ -1,7 +1,18 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
+{% if content %}
 <article>
-  {% include "partials/post-list.html" %}
+{{ content | safe }}
 </article>
+{% endif %}
+
+<article>
+  {% if title == "Now" %}
+  <h1>Archive</h1>
+  {% include "partials/now-list.html" %}
+  {% else %}
+  {% include "partials/post-list.html" %}
+  {% endif %}
 {% endblock %}
+</article>
