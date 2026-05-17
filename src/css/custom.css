@@ -13,6 +13,8 @@
 }
 
 :root {
+  --font-sans: "Atkinson Hyperlegible Next", sans-serif;
+  --font-mono: "Atkinson Hyperlegible Mono", monospace;
   --bg: #111111;
   --fg: #f2f0e8;
   --graphite: #2b2b21;
@@ -29,7 +31,7 @@
   --magenta:  #ec4899;
   color-scheme: light dark;
   color: light-dark(var(--bg), var(--fg));
-  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   --radius: 0px;
 }
@@ -109,7 +111,7 @@ main section + section {
  */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Atkinson Hyperlegible Mono";
+  font-family: var(--font-mono);
 }
 
 h1 { font-size: 2em; }
