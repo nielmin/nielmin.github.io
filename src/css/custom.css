@@ -31,8 +31,32 @@
   color: light-dark(var(--bg), var(--fg));
   font-family: "Atkinson Hyperlegible Next", sans-serif;
   font-weight: 400;
-  --main-width: 640px;
   --radius: 0px;
+}
+
+html {
+  font-size: 1.25rem; /* 1 */
+  box-sizing: border-box; /* 2 */
+}
+
+/**
+ * 1. Continue the global box-sizing modification.
+ * 2. Set the underline size for all elements.
+ */
+
+*, ::after, ::before {
+  box-sizing: inherit; /* 1 */
+  text-decoration-thickness: .1rem; /* 2 */
+}
+
+/**
+ * 1. Set the max width of images to 100%, so that they don't overflow.
+ * 2. Set the height of images relative to their width.
+ */
+
+img {
+  max-width: 100%; /* 1 */
+  height: auto; /* 2 */
 }
 
 body {
@@ -43,8 +67,75 @@ body {
 }
 
 
+/** 
+ * 1. Center the root main/header/footer elements horizontally.
+ * 2. Set the width of the elements to the main-width variable, with padding 
+ *    for mobile screens.
+ */
+
+body > header,
+body > main,
+body > footer {
+  margin: auto; /* 1 */
+  min-width: 80vw; /* 2 */
+  max-width: 80vw;
+  top-padding: 10vh;
+  bottom-padding: 10vh;
+}
+
+/**
+ * 1. Add some padding around the main header.
+ * 2. Increase the size of text in the main header.
+ */
+
+body > header {
+  font-size: 1.2em; /* 2 */
+}
+
 main {
   height: 100%;
+}
+
+/**
+ * Add some padding around the main sections.
+ */
+
+main section + section {
+  padding: 2rem 0;
+}
+
+/**
+ * Set the font-family for all section headings.
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Atkinson Hyperlegible Mono";
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.00em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.67em; }
+
+
+h1 {
+  color: light-dark(var(--yellow), var(--yellow));
+}
+
+/**
+ * Footer
+ */
+
+footer {
+  text-align: center;
+  color: light-dark(var(--green), var(--green));
+  padding: 2rem;
+  font-size: large;
+  p {
+    margin: 0;
+  }
 }
 
 a {
@@ -88,19 +179,6 @@ article {
   }
 }
 
-h1 {
-  color: light-dark(var(--yellow), var(--yellow));
-}
-
-footer {
-  color: light-dark(var(--green), var(--green));
-  padding: 2rem;
-  font-size: large;
-  p {
-    margin: 0;
-  }
-}
-
 blockquote {
   font-weight: bolder;
   font-style: italic;
@@ -111,5 +189,6 @@ ul {
 }
 
 code {
+  color: light-dark(var(--green), var(--green));
   font-family: "Atkinson Hyperlegible Mono";
 }

@@ -4,22 +4,6 @@
  * 1. Modify the base font-size to 1.25rem, to make everything larger.
  * 2. Set box-sizing globally to handle padding and border widths.
  */
-
-html {
-  font-size: 1.25rem; /* 1 */
-  box-sizing: border-box; /* 2 */
-}
-
-/**
- * 1. Continue the global box-sizing modification.
- * 2. Set the underline size for all elements.
- */
-
-*, ::after, ::before {
-  box-sizing: inherit; /* 1 */
-  text-decoration-thickness: .1rem; /* 2 */
-}
-
 /**
  * 1. Stretch figure to full width of the section.
  */
@@ -40,69 +24,6 @@ figcaption {
   padding-bottom: .2rem; /* 4 */
 }
 
-/**
- * 1. Set the max width of images to 100%, so that they don't overflow.
- * 2. Set the height of images relative to their width.
- */
-
-img {
-  max-width: 100%; /* 1 */
-  height: auto; /* 2 */
-}
-
-/**
- * Add some padding around the main sections.
- */
-
-main section + section {
-  padding: 2rem 0;
-}
-
-/** 
- * 1. Center the root main/header/footer elements horizontally.
- * 2. Set the width of the elements to the main-width variable, with padding 
- *    for mobile screens.
- */
-
-body > header,
-body > main,
-body > footer {
-  margin: auto; /* 1 */
-  max-width: calc(var(--main-width) + 20px); /* 2 */
-  width: 100%; /* 2 */
-}
-
-/**
- * 1. Add some padding around the main header.
- * 2. Increase the size of text in the main header.
- */
-
-body > header {
-  font-size: 1.2em; /* 2 */
-}
-
-/**
- * Set the font-family for all section headings.
- */
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-h);
-}
-
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.00em; }
-h5 { font-size: 0.83em; }
-h6 { font-size: 0.67em; }
-
-/**
- * Center the text in the footer.
- */
-
-footer {
-  text-align: center;
-}
 
 /**
  * 1. Change the style of the button.
@@ -143,9 +64,9 @@ input[type="submit"]:disabled{
 /**
  * Set a margin around the navigation bar
  */
-nav {
-  margin: 2rem 0;
-}
+/*nav {
+/*  margin: 1rem 0;
+/*}
 
 /**
  * 1. Remove padding around the navigation bar's inner unordered list
