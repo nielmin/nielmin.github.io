@@ -1,7 +1,7 @@
   <ul>
-    <li>
     {% for post in posts %}
-      <a href={{ post.date | htmlDateString }}>{{ post.date | htmlDateString }}</a>
+    <li>
+      <a href="{{ post.page.fileSlug }}">{{ post.page.fileSlug }}</a>
     </li> 
     {% endfor %}
   </ul>
