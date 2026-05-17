@@ -17,8 +17,13 @@
 
   {% include "partials/header.html" %}
 
-  <main>{% block content %}{% endblock %}</main>
-
+  <main>
+    <section>
+    <h1>{{ title }}</h1>
+    </section>
+    {% block content %}
+    {% endblock %}
+  </main>
   {% include "partials/footer.html" %}
 
 </body>
