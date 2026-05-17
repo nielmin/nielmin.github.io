@@ -133,7 +133,7 @@ h1 {
 
 footer {
   text-align: center;
-  color: light-dark(var(--green), var(--green));
+  color: light-dark(var(--blue), var(--blue));
   padding: 2rem;
   font-size: large;
   p {
