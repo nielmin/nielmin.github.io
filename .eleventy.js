@@ -28,6 +28,10 @@ module.exports = (config) => {
   config.addPassthroughCopy("src/css");
   config.addWatchTarget("src/css/");
 
+  config.addFilter("isoDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat("yyyy-LL-dd");
+  });
+
   config.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
