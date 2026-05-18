@@ -107,6 +107,11 @@ main section + section {
   padding: 2rem 0;
 }
 
+time {
+  color: light-dark(var(--pink), var(--pink));
+  font-family: --font-mono;
+}
+
 /**
  * Set the font-family for all section headings.
  */
