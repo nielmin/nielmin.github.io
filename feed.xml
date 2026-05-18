@@ -196,7 +196,7 @@ Maybe it was because Immich released V2, or maybe &lt;code&gt;podman&lt;/code&gt
     <id>https://nielmin.github.io/blog/self-hosting-is-simpler-without-hoarding/</id>
     <content type="html">&lt;p&gt;I recently noticed there&#39;s a lot of &lt;a href=&quot;https://github.com/Ravencentric/awesome-arr&quot;&gt;effort&lt;/a&gt; put in a specific area in self-hosting: &lt;strong&gt;media&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;And I think it&#39;s a bit unecessary.&lt;/p&gt;
-&lt;p&gt;Fhe value of self-hosting is becoming independent and having control of your data and privacy.
+&lt;p&gt;The value of self-hosting is becoming independent and having control of your data and privacy.
 It is, first and foremost, about having access to tools you control that augment your digital experience without violating your rights.
 Whether that&#39;s having an adblocker on your home network or a Frigate-based CCTV setup, your hosted services should add some convenience to your life.
 Otherwise, what&#39;s the point (besides learning).&lt;/p&gt;

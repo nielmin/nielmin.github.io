@@ -107,6 +107,11 @@ main section + section {
   padding: 2rem 0;
 }
 
+time {
+  color: light-dark(var(--pink), var(--pink));
+  font-family: --font-mono;
+}
+
 /**
  * Set the font-family for all section headings.
  */
@@ -191,6 +196,6 @@ ul {
 }
 
 code {
+  font-family: --font-mono;
   color: light-dark(var(--green), var(--green));
-  font-family: "Atkinson Hyperlegible Mono";
 }
