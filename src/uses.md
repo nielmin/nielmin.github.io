@@ -4,7 +4,7 @@ layout: 'layouts/page.html'
 permalink: '/uses/index.html'
 ---
 
-## Custom Gaming PC
+## 🖥️ Custom Gaming PC
 <details>
 <summary>Specs</summary>
 
@@ -19,7 +19,7 @@ Computer was built over the course of a couple of years.
 Upgrades were mostly from Craigslist deals.
 Kind of overkill for my needs currently since I do not play AAA titles anymore.
 
-## HP ProBook x360 435 G7
+## 💻 HP ProBook x360 435 G7
 
 <details>
 <summary>Specs</summary>
@@ -32,7 +32,7 @@ Kind of overkill for my needs currently since I do not play AAA titles anymore.
 
 This is replacing my ThinkPad T480, which I'm going to sell.
 
-## ThinkPad T480
+## 💻 ThinkPad T480
 <details>
 <summary>Specs</summary>
 - OS: NixOS 25.11
@@ -59,7 +59,7 @@ In hindsight I should've returned the laptop.
 
 But fanboys will do fanboy things.
 
-## Keyboards
+## ⌨️ Keyboards
 
 I finished building the [forager](https://github.com/carrefinho/forager) in May 2026 after not being able to back in October 2025.
 
