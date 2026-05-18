@@ -1,7 +1,7 @@
 ---
 title: 'Self-hosting is simpler without hoarding'
-date: '2026-02-21'
-modified: ''
+date: 2026-02-21
+modified: 2026-05-17
 tags: [ 'Selfhost', 'Linux' ]
 ---
 
@@ -9,7 +9,7 @@ I recently noticed there's a lot of [effort](https://github.com/Ravencentric/awe
 
 And I think it's a bit unecessary.
 
-Fhe value of self-hosting is becoming independent and having control of your data and privacy.
+The value of self-hosting is becoming independent and having control of your data and privacy.
 It is, first and foremost, about having access to tools you control that augment your digital experience without violating your rights.
 Whether that's having an adblocker on your home network or a Frigate-based CCTV setup, your hosted services should add some convenience to your life.
 Otherwise, what's the point (besides learning).
