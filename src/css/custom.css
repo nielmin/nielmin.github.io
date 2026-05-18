@@ -196,6 +196,6 @@ ul {
 }
 
 code {
+  font-family: --font-mono;
   color: light-dark(var(--green), var(--green));
-  font-family: "Atkinson Hyperlegible Mono";
 }
