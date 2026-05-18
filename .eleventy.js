@@ -37,7 +37,7 @@ module.exports = (config) => {
   });
 
   config.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat("dd LLL yyyy");
+    return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat("LLL dd yyyy");
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
