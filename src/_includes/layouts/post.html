@@ -4,13 +4,13 @@
 
   <p>
   <i>
-  Created:
-  <time datetime="{{ page.date | htmlDateString }}" data-pagefind-sort="date">{{ page.date | htmlDateString }}</time>
   {% if modified %}
-  •
   Last Modified:
-  <time datetime="{{ modified }}" data-pagefind-sort="date">{{ modified }}</time>
+  <time datetime="{{ modified | readableDate }}" data-pagefind-sort="date">{{ modified | readableDate }}</time>
+  •
   {% endif %}
+  Created:
+  <time datetime="{{ page.date | readableDate }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
   </i>
   </p>
 
