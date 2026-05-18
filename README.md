@@ -6,6 +6,7 @@
 - [ ] Incorporate tags in posts
 
 ## DONE
+- [X] Sort blog posts by year date month in reverse chronology
 - [X] If no blog posts exists, site gives generic 404
 - [X] Create custom 404 page
 - [X] Add RSS plugin

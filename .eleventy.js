@@ -32,6 +32,10 @@ module.exports = (config) => {
     return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat("yyyy-LL-dd");
   });
 
+  config.addFilter("prettyMonthDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat("LLL dd");
+  });
+
   config.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'america/chicago'}).toFormat("dd LLL yyyy");
   });
