@@ -210,7 +210,12 @@ blockquote {
   font-style: italic;
 }
 
-ul {
+.tag-list {
+  ul {
+    a {
+      color: light-dark(lch(from var(--orange) calc(l - 10) c h), var(--orange));
+    }
+  }
 }
 
 code {
