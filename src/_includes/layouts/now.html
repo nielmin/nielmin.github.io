@@ -2,7 +2,7 @@
 
 {% block content %}
 <section>
-  <h2>{{ page.date }}</h2>
+  <h2>{{ page.date | isoDate }}</h2>
 </section>
 <article>
   {{ content | safe }}
