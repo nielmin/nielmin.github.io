@@ -2,6 +2,13 @@
 
 {% block content %}
 
+  <ul>
+  tags:
+  {% for tag in tags %}
+  <li><a href=/{{ tag }}>{{ tag }}</li>
+  {% endfor %}
+  </ul>
+
   <p>
   <i>
   {% if modified %}

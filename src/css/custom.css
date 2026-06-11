@@ -107,6 +107,19 @@ main section + section {
   padding: 2rem 0;
 }
 
+section {
+  ul {
+    font-size: medium;
+    font-family: var(--font-mono);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+  };
+}
+
 time {
   color: light-dark(var(--pink), var(--pink));
   font-family: var(--font-mono);
