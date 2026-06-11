@@ -23,6 +23,7 @@ Kind of overkill for my needs currently since I do not play AAA titles anymore.
 
 <details>
 <summary>Specs</summary>
+
 - OS: NixOS 25.11
 - CPU: Ryzen 5 4500u (6c/12t)
 - RAM: 16 GB
@@ -35,6 +36,7 @@ This is replacing my ThinkPad T480, which I'm going to sell.
 ## 💻 ThinkPad T480
 <details>
 <summary>Specs</summary>
+
 - OS: NixOS 25.11
 - CPU: Intel i5-8250U (4c/8t)
 - RAM: 16 GB
