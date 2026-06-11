@@ -107,9 +107,11 @@ main section + section {
   padding: 2rem 0;
 }
 
-section {
+.post-meta {
+  font-style: italic;
+  font-size: medium;
   ul {
-    font-size: medium;
+    color: var(--blue);
     font-family: var(--font-mono);
     margin: 0;
     padding: 0;
@@ -118,6 +120,9 @@ section {
   li {
     display: inline-block;
   };
+  p {
+    color: var(--light-gray);
+  }
 }
 
 time {
