@@ -109,7 +109,7 @@ main section + section {
 
 time {
   color: light-dark(var(--pink), var(--pink));
-  font-family: --font-mono;
+  font-family: var(--font-mono);
 }
 
 /**
@@ -160,7 +160,7 @@ a:hover {
 header {
   text-align: center;
   h1 {
-    font-family: "Atkinson Hyperlegible Mono";
+    font-family: var(--font-mono);
 
   }
   ul {
@@ -196,6 +196,6 @@ ul {
 }
 
 code {
-  font-family: --font-mono;
+  font-family: var(--font-mono);
   color: light-dark(var(--green), var(--green));
 }
