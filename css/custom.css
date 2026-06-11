@@ -107,6 +107,24 @@ main section + section {
   padding: 2rem 0;
 }
 
+.post-meta {
+  font-style: italic;
+  font-size: medium;
+  ul {
+    color: var(--blue);
+    font-family: var(--font-mono);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+  };
+  p {
+    color: var(--light-gray);
+  }
+}
+
 time {
   color: light-dark(var(--pink), var(--pink));
   font-family: var(--font-mono);
