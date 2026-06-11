@@ -1,7 +1,7 @@
 ---
 title: 'Now'
 layout: 'layouts/feed.html'
-date: Last Modified
+date: 2026-05-27
 pagination:
   data: collections.now
   size: 5
