@@ -1,11 +1,12 @@
 # My personal [site](https://nielmin.github.io)
 
 ## TODO
+- [ ] Tags Pagination
 - [ ] Custom classless CSS based off of [concrete.css](https://concrete.style/)
 - [ ] Add dark-mode toggle
-- [ ] Incorporate tags in posts
 
 ## DONE
+- [X] Incorporate tags in posts
 - [X] Sort blog posts by year date month in reverse chronology
 - [X] If no blog posts exists, site gives generic 404
 - [X] Create custom 404 page
