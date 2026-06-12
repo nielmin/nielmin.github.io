@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/css/concrete.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
+  <title>Building a Ferris Sweep MX | nielmin</title>
+</head>
+
+<body>
+
+  <header>
+	<nav aria-label="Primary">
+    <h1><a href="/">nielmin</a></h1>
+		<ul>
+			
+			<li><a href="/blog/">blog</a></li>
+			
+			<li><a href="/uses/">uses</a></li>
+			
+			<li><a href="/splits/">splits</a></li>
+			
+			<li><a href="/now/">now</a></li>
+			
+		</ul>
+	</nav>
+</header>
+
+
+  <main>
+    <section>
+    <h1>Building a Ferris Sweep MX</h1>
+    
+
+<div class='post-meta'>
+  <ul>
+  tags:
+  
+  <li><a href=/tags/keyboard>Keyboard</a></li>
+  
+  <li><a href=/tags/diy>DIY</a></li>
+  
+  </ul>
+
+  <p>
+  
+  Created:
+  <time datetime="Jun 10 2026" data-pagefind-sort="date">Jun 10 2026</time>
+  </p>
+</div>
+
+  
+
+<article>
+  <p>After using the Forager for a couple of months, I've decided that the Choc form factor is not for me.</p>
+<p>Keyboards like the Forager and the TOTEM are desirable due to their compactness and thinness.
+They are so tiny that you can chuck them into your jacket pocket and take them anywhere without having to worry about burden of &quot;carrying your favorite keyboard to the cafe&quot;.
+The thinness also forgoes the need for wrist rests and helps keep the wrists in a flat, neutral position.</p>
+<p>But the biggest problem with choc boards is that the typing experience sucks compared to MX switches.
+Your options for switches are either linear or clicky (there is one <em>good</em> <a href="https://lowprokb.ca/products/sunset-tactile-choc-switches">tactile choc v1 switch</a> on the market), and the switches themselves aren't <em>fun</em> to type on.
+I've tried out Choc Whites, Red Pros, and Cherry Blossoms from MoErgo, and all of them can't compare to the <a href="https://www.amazon.com/EPOMAKER-Nude-Pre-Lubed-Compatible-Mechanical/dp/B0CV43SJM1?th=1">budget MX switches</a> I'm typing on now.
+They also cost more compared their MX couterparts.</p>
+<p>That is why I built my endgame (TBD) keyboard: the <a href="https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20Bling%20MX">Ferris Sweep Bling MX</a>.</p>
+<h3>Building a Sweep is pretty simple</h3>
+<p>Because there are enough GPIO pins on the <a href="https://www.amazon.com/Teyleten-Robot-Development-Bluetooth-Management/dp/B0CYLNZ6V4?s=electronics">microcontroller</a>, the Sweep does not require you to solder on diodes.
+That alone saves a lot of time.
+The only things you need to solder are the MX hotswap sockets and pin (male/female) headers for your MCU.</p>
+<p>Don't forget to bridge pads underneath the microcontroller for each side.</p>
+<p>Compared to the Forager, the Sweep was such a breeze to build.</p>
+<h3>Hardware Difficulties</h3>
+<p>Even though the build was easy, I did run into a couple of problems, most of which were my fault.</p>
+<p>While trying to desolder using the hot air station, I knocked off some components from one microcontroller.
+The components were small enough that I didn't want to go through the hassle of soldering them back on again.
+So I just ordered another set.</p>
+<p>I also destroyed two pins on the other MCU while trimming the excess male headers.
+Maybe cutting multiple headers at once added uneccessary strain to the PCB and ripped the copper.
+I honestly do not know.</p>
+<p>So MCU kill count for this build is a 2 (-$20).</p>
+<h3>FYI: Battery Size</h3>
+<p>I bought and use <a href="https://www.amazon.com/dp/B09WVWSTTJ?ref=ppx_yo2ov_dt_b_fed_asin_title">150mAh batteries</a>, which fit underneath nicely.
+They are a little longer than the typical batteries people recommend (301230), but I had no issues with fitment, even with <a href="https://www.printables.com/model/1748597-sweep-bling-mx-w-heat-inserts-thicker-plate">my custom 3D printed case</a>.</p>
+<h3>Firmware Issue</h3>
+<p>The last hurdle of issues I ran into was the actual firmware.</p>
+<p>First, I copied an existing config from GitHub, but forgot to remove stuff related to a <a href="https://zmk.dev/docs/hardware-integration/dongle">ZMK dongle</a>.
+So when it was time to connect my keyboard to the computer, I could not get the main half to connect to my Linux machine.
+It took me way too long to figure out that the keyboard was looking for a bluetooth dongle that did not exist.</p>
+<p>The other thing to fix was is weak BLE signal strength.
+Whenever I tried to pair the Sweep, it would take a bit for it to show up in the devices list.
+So I had to set <code>CONFIG_BT_CTLR_TX_PWR_PLUS_8=y</code> in my config in order to increase the BT strength, and things seem to work fine (for now).</p>
+<p>Lastly, there seems to be a bug with the nice nano that <a href="https://github.com/zmkfirmware/zmk/issues/3207">prevents it from waking up from deep sleep</a>.
+The temporary fix is to use <code>v0.3</code> instead of <code>main</code>, at least until the next stable release (<a href="https://github.com/BigWhale/zmk/commit/f1862b7cc726226f81e7309bf22f23b16c24297a">I think this fixes my issue</a>).</p>
+<h3>Using the Sweep</h3>
+<p>So with all the hardware and firmware issuse out of the way, how is the Sweep Bling MX?</p>
+<p>Honestly, I really like typing on this board.</p>
+<p>Because I've tried <a href="/splits">different ergo split keyboards</a> with different numbers of keys and switch types. I've come to know what I want from my endgame:</p>
+<ul>
+<li>34 keys.</li>
+<li>Wireless.</li>
+<li>Aggressive pinky stagger.</li>
+<li>Thumb keys that don't require me to tuck my thumb into my palm.</li>
+</ul>
+<p>And the Sweep fits all of these perfectly, and I would say it is effectively my endgame keyboard.</p>
+<p>The only thing I do not like about the Sweep is the exposed microcontroller.
+Compared to the forager and TOTEM, it is not as minimal as I would like a keyboard to be.
+So I think my true endgame would have to be a custom one that I design myself using <a href="https://www.kicad.org/">KiCad</a> and <a href="https://ergogen.xyz/new">ergogen</a>.</p>
+<p>But that's for another day.</p>
+<h3>Conclusion</h3>
+<p>I think I'm done with buiding keyboards.
+I've learned all that I could about soldering and electronics from this hobby, and I no longer want to spend the time or money building other people's designs.
+I know what I want from a keyboard, and the only way to get it is to design one myself.</p>
+<p>So, unless something changes, the Ferris Sweep is the last keyboard that I build.</p>
+
+</article>
+
+    </section>
+  </main>
+  <footer>
+	<p>
+		
+    
+    <a href="https://nielmin.github.io/feed.xml">RSS</a>
+    
+		
+    
+    • <a href="https://github.com/nielmin">GitHub</a>
+    
+		
+    
+    • <a href="mailto:danhwa13@gmail.com">Email</a>
+    
+		
+	</p>
+  <p>
+		nielmin © 2026
+  </p>
+</footer>
+
+
+</body>
+
+</html>
