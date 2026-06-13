@@ -32,13 +32,14 @@ Compared to the Forager, the Sweep was such a breeze to build.
 
 Even though the build was easy, I did run into a couple of problems, most of which were my fault.
 
-While trying to desolder using the hot air station, I knocked off some components from one microcontroller.
-The components were small enough that I didn't want to go through the hassle of soldering them back on again.
-So I just ordered another set.
+While trying to desolder some crooked male headers using hot air, I knocked some components from the main microcontroller.
+The components were super tiny small and outside of my current skill set, so I just ordered another set from Amazon.
 
-I also destroyed two pins on the other MCU while trimming the excess male headers.
-Maybe cutting multiple headers at once added uneccessary strain to the PCB and ripped the copper.
+I also botched another MCU while trimming the excess male headers.
+Cutting multiple headers at once probably added uneccessary strain to the PCB and ripped some traces.
 I honestly do not know.
+
+>My advice: Mark the excess headers and trim them before soldering onto the MCU.
 
 So MCU kill count for this build is a ~~2~~ **3**.
 
