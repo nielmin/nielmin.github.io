@@ -50,6 +50,10 @@
 
   <p>
   
+  Last Modified:
+  <time datetime="Jun 12 2026" data-pagefind-sort="date">Jun 12 2026</time>
+  |
+  
   Created:
   <time datetime="Jun 10 2026" data-pagefind-sort="date">Jun 10 2026</time>
   </p>
@@ -81,7 +85,7 @@ So I just ordered another set.</p>
 <p>I also destroyed two pins on the other MCU while trimming the excess male headers.
 Maybe cutting multiple headers at once added uneccessary strain to the PCB and ripped the copper.
 I honestly do not know.</p>
-<p>So MCU kill count for this build is a 2 (-$20).</p>
+<p>So MCU kill count for this build is a <s>2</s> <strong>3</strong>.</p>
 <h3>FYI: Battery Size</h3>
 <p>I bought and use <a href="https://www.amazon.com/dp/B09WVWSTTJ?ref=ppx_yo2ov_dt_b_fed_asin_title">150mAh batteries</a>, which fit underneath nicely.
 They are a little longer than the typical batteries people recommend (301230), but I had no issues with fitment, even with <a href="https://www.printables.com/model/1748597-sweep-bling-mx-w-heat-inserts-thicker-plate">my custom 3D printed case</a>.</p>
@@ -93,8 +97,19 @@ It took me way too long to figure out that the keyboard was looking for a blueto
 <p>The other thing to fix was is weak BLE signal strength.
 Whenever I tried to pair the Sweep, it would take a bit for it to show up in the devices list.
 So I had to set <code>CONFIG_BT_CTLR_TX_PWR_PLUS_8=y</code> in my config in order to increase the BT strength, and things seem to work fine (for now).</p>
-<p>Lastly, there seems to be a bug with the nice nano that <a href="https://github.com/zmkfirmware/zmk/issues/3207">prevents it from waking up from deep sleep</a>.
-The temporary fix is to use <code>v0.3</code> instead of <code>main</code>, at least until the next stable release (<a href="https://github.com/BigWhale/zmk/commit/f1862b7cc726226f81e7309bf22f23b16c24297a">I think this fixes my issue</a>).</p>
+<p><s>Lastly, there seems to be a bug with the nice nano that <a href="https://github.com/zmkfirmware/zmk/issues/3207">prevents it from waking up from deep sleep</a>.</s>
+<s>The temporary fix is to use <code>v0.3</code> instead of <code>main</code>, at least until the next stable release (<a href="https://github.com/BigWhale/zmk/commit/f1862b7cc726226f81e7309bf22f23b16c24297a">I think this fixes my issue</a>).</s></p>
+<p><strong>UPDATE</strong></p>
+<p>So I broke the main microcontroller <em>again</em> while replacing the reset button (it was mushy), and now the issues I mentioned above, especially the wake-from-sleep, are <strong>completely gone</strong>.
+I just tested it now, and the Sweep automatically connects to my computer without any issues or having to power cycle the left/central half.</p>
+<p>This is what my <code>bling.conf</code> currently has:</p>
+<pre><code>CONFIG_ZMK_USB_LOGGING=n
+CONFIG_ZMK_SLEEP=y
+CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=3600000
+CONFIG_ZMK_USB_BOOT=y
+CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+</code></pre>
+<p>I guess the morale of the story is to replace your MCU if something isn't working.</p>
 <h3>Using the Sweep</h3>
 <p>So with all the hardware and firmware issuse out of the way, how is the Sweep Bling MX?</p>
 <p>Honestly, I really like typing on this board.</p>
