@@ -3,7 +3,7 @@ title: "Don't use Linux if you hate Microsoft"
 summary: "You're setting yourself up for failure"
 date: 2025-10-03
 modified: 2025-10-30
-tags: [ 'Test' ]
+tags: [ 'Commentary', 'Linux' ]
 ---
 
 With the end of Windows 10 coming in 2 weeks, people have a couple of options:
