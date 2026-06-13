@@ -1,7 +1,7 @@
 ---
 title: 'Building a Ferris Sweep MX'
-date: '2026-06-11'
-modified: ''
+date: 2026-06-11
+modified: 2026-06-13
 tags: [ 'Keyboard', 'DIY' ]
 ---
 
@@ -40,7 +40,7 @@ I also destroyed two pins on the other MCU while trimming the excess male header
 Maybe cutting multiple headers at once added uneccessary strain to the PCB and ripped the copper.
 I honestly do not know.
 
-So MCU kill count for this build is a 2 (-$20).
+So MCU kill count for this build is a ~2~**3** (-$20).
 
 ### FYI: Battery Size
 
@@ -59,8 +59,25 @@ The other thing to fix was is weak BLE signal strength.
 Whenever I tried to pair the Sweep, it would take a bit for it to show up in the devices list.
 So I had to set `CONFIG_BT_CTLR_TX_PWR_PLUS_8=y` in my config in order to increase the BT strength, and things seem to work fine (for now).
 
-Lastly, there seems to be a bug with the nice nano that [prevents it from waking up from deep sleep](https://github.com/zmkfirmware/zmk/issues/3207).
-The temporary fix is to use `v0.3` instead of `main`, at least until the next stable release ([I think this fixes my issue](https://github.com/BigWhale/zmk/commit/f1862b7cc726226f81e7309bf22f23b16c24297a)).
+~~Lastly, there seems to be a bug with the nice nano that [prevents it from waking up from deep sleep](https://github.com/zmkfirmware/zmk/issues/3207).~~
+~~The temporary fix is to use `v0.3` instead of `main`, at least until the next stable release ([I think this fixes my issue](https://github.com/BigWhale/zmk/commit/f1862b7cc726226f81e7309bf22f23b16c24297a)).~~
+
+**UPDATE**
+
+So I broke the main microcontroller *again* (-$7) while replacing the reset button (it was mushy), and now the issues I mentioned above, especially the wake-from-sleep, are **completely gone**.
+I just tested it now, and the Sweep automatically connects to my computer without any issues or having to power cycle the left/central half.
+
+This is what my `bling.conf` currently has:
+
+```
+CONFIG_ZMK_USB_LOGGING=n
+CONFIG_ZMK_SLEEP=y
+CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=3600000
+CONFIG_ZMK_USB_BOOT=y
+CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+```
+
+I guess the morale of the story is to replace your MCU if something isn't working.
 
 ### Using the Sweep
 
@@ -90,5 +107,3 @@ I've learned all that I could about soldering and electronics from this hobby, a
 I know what I want from a keyboard, and the only way to get it is to design one myself.
 
 So, unless something changes, the Ferris Sweep is the last keyboard that I build.
-
-
