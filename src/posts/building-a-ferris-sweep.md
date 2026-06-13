@@ -40,7 +40,7 @@ I also destroyed two pins on the other MCU while trimming the excess male header
 Maybe cutting multiple headers at once added uneccessary strain to the PCB and ripped the copper.
 I honestly do not know.
 
-So MCU kill count for this build is a ~2~**3** (-$20).
+So MCU kill count for this build is a ~~2~~ **3**.
 
 ### FYI: Battery Size
 
@@ -64,7 +64,7 @@ So I had to set `CONFIG_BT_CTLR_TX_PWR_PLUS_8=y` in my config in order to increa
 
 **UPDATE**
 
-So I broke the main microcontroller *again* (-$7) while replacing the reset button (it was mushy), and now the issues I mentioned above, especially the wake-from-sleep, are **completely gone**.
+So I broke the main microcontroller *again* while replacing the reset button (it was mushy), and now the issues I mentioned above, especially the wake-from-sleep, are **completely gone**.
 I just tested it now, and the Sweep automatically connects to my computer without any issues or having to power cycle the left/central half.
 
 This is what my `bling.conf` currently has:
