@@ -136,8 +136,7 @@ a:hover {
 }
 
 time {
-  font-weight: bolder;
-  font-style: italic;
+  font-weight: lighter;
   font-family: var(--font-mono);
 }
 
