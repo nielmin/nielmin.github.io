@@ -1,15 +1,13 @@
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
-  src: local("/static/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2")
-    format("woff2");
+  src: url("/static/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Atkinson Hyperlegible Mono";
-  src: local("/static/fonts/AtkinsonHyperlegibleMonoVF-Variable.woff2")
-    format("woff2");
+  src: url("/static/fonts/AtkinsonHyperlegibleMonoVF-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
@@ -17,92 +15,124 @@
 :root {
   --font-sans: "Atkinson Hyperlegible Next", sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", monospace;
-  --bg: #111111;
-  --fg: #f2f0e8;
+  --bg-dark: #111111;
+  --fg-dark: #f2f0e8;
+  --bg-light: #ffffff;
+  --fg-light: #1a1a1a;
   --graphite: #2b2b21;
   --light-gray: #c9c9c3;
   --gray: #e5e5e5;
   --orange: #fb923c;
   --yellow: #facc15;
+  --radius: 0px;
+
   color-scheme: light dark;
-  color: light-dark(var(--bg), var(--fg));
+  background-color: light-dark(var(--bg-light), var(--bg-dark));
+  color: light-dark(var(--fg-light), var(--fg-dark));
   font-family: var(--font-sans);
   font-weight: 400;
-  --radius: 0px;
 }
 
 html {
-  font-size: 1.25rem; /* 1 */
-  box-sizing: border-box; /* 2 */
+  font-size: 1.25rem;
+  box-sizing: border-box;
 }
-
-/**
- * 1. Continue the global box-sizing modification.
- * 2. Set the underline size for all elements.
- */
 
 *, ::after, ::before {
-  box-sizing: inherit; /* 1 */
-  text-decoration-thickness: .1rem; /* 2 */
+  box-sizing: inherit;
+  text-decoration-thickness: 0.1rem;
 }
 
-/**
- * 1. Set the max width of images to 100%, so that they don't overflow.
- * 2. Set the height of images relative to their width.
- */
-
 img {
-  max-width: 100%; /* 1 */
-  height: auto; /* 2 */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 body {
-  margin: 0; /* 1 */
+  margin: 0;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
-
-/** 
- * 1. Center the root main/header/footer elements horizontally.
- * 2. Set the width of the elements to the main-width variable, with padding 
- *    for mobile screens.
- */
-
 body > header,
 body > main,
 body > footer {
-  margin: auto;
-  min-width: 30vw;
-  max-width: 80vw;
-  padding-bottom: 5vh;
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: 0 1.5rem 5vh 1.5rem;
 }
 
-/**
- * 1. Add some padding around the main header.
- * 2. Increase the size of text in the main header.
- */
-
 body > header {
-  font-size: 1.2em; /* 2 */
+  font-size: 1.2em;
+  text-align: center;
+
+  h1 {
+    font-family: var(--font-mono);
+  }
+
+  ul a {
+    color: light-dark(var(--graphite), var(--light-gray));
+  }
 }
 
 main {
   height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  line-height: 1.2;
+}
+
+h1 { 
+  font-size: 2em; 
+  color: light-dark(lch(from var(--yellow) calc(l - 20) c h), var(--yellow)); 
+}
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.67em; }
+
+code {
+  font-family: var(--font-mono);
+}
+
+blockquote {
+  font-weight: bolder;
+  font-style: italic;
+  border-left: 4px solid var(--orange);
+  padding-left: 1rem;
+  margin-inline: 0;
+}
+
+a {
+  color: light-dark(var(--fg-light), var(--fg-dark));
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .post-meta {
   font-size: medium;
+
   ul {
     font-family: var(--font-mono);
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
+
   li {
     display: inline-block;
-  };
+    margin-right: 1rem;
+  }
 }
 
 time {
@@ -111,94 +141,37 @@ time {
   font-family: var(--font-mono);
 }
 
-/**
- * Set the font-family for all section headings.
- */
+article {
+  a {
+    color: light-dark(lch(from var(--orange) calc(l - 20) c h), var(--orange));
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-mono);
+  img {
+    transition: transform 0.2s ease;
+    border-radius: 8px;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }
 
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.00em; }
-h5 { font-size: 0.83em; }
-h6 { font-size: 0.67em; }
-
-
-h1 {
-  color: light-dark(var(--yellow), var(--yellow));
+.tag-list ul a {
+  color: light-dark(lch(from var(--orange) calc(l - 20) c h), var(--orange));
 }
-
-/**
- * Footer
- */
 
 footer {
   text-align: center;
-  color: light-dark(var(--light-gray), var(--light-gray));
-  padding: 2rem;
+  color: light-dark(var(--graphite), var(--light-gray));
+  padding: 2rem 1.5rem;
   font-size: large;
+
   p {
     margin: 0;
   }
+
   a {
-    color: light-dark(var(--light-gray), var(--light-gray));
+    color: inherit;
+    text-decoration: underline;
   }
-}
-
-a {
-  color: light-dark(var(--bg), var(--fg));
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: .1rem;
-}
-
-header {
-  text-align: center;
-  h1 {
-    font-family: var(--font-mono);
-
-  }
-  ul {
-    a {
-      color: light-dark(var(--light-gray), var(--light-gray));
-    }
-  }
-}
-
-article {
-  a {
-    color: light-dark(lch(from var(--orange) calc(l - 10) c h), var(--orange));
-  }
-  img {
-    transform: scale(1);
-    transition: all 0.2s ease;
-    border-radius: 2%
-  }
-  img:hover {
-    transform: scale(1.05);
-  }
-}
-
-blockquote {
-  font-weight: bolder;
-  font-style: italic;
-}
-
-.tag-list {
-  ul {
-    a {
-      color: light-dark(lch(from var(--orange) calc(l - 10) c h), var(--orange));
-    }
-  }
-}
-
-code {
-  font-family: var(--font-mono);
 }
