@@ -2,7 +2,8 @@
 
 {% block content %}
 <section>
-  <h2>{{ page.date | isoDate }}</h2>
+  <p>Previously on...</p>
+  <h2>{{ page.date | readableDate }}</h2>
 </section>
 <article>
   {{ content | safe }}
