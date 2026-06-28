@@ -2,17 +2,17 @@
   "links": [
     {
       "text": "RSS",
-      "img": "/static/img/rss.svg",
+      "img": "fa-solid fa-square-rss",
       "url": "https://nielmin.github.io/feed.xml"
     },
     {
       "text": "GitHub",
-      "img": "/static/img/github.svg",
+      "img": "fa-brands fa-square-github",
       "url": "https://github.com/nielmin"
     },
     {
       "text": "Email",
-      "img": "/static/img/mail.svg",
+      "img": "fa-solid fa-square-envelope",
       "url": "mailto:danhwa13@gmail.com"
     }
   ]

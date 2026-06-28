@@ -1,14 +1,10 @@
 <footer>
 	<p>
 		{% for link in socials.links %}
-    {% if loop.first %}
-    <a href="{{ link.url }}">{{ link.text }}</a>
-    {% else %}
-    • <a href="{{ link.url }}">{{ link.text }}</a>
-    {% endif %}
+    <a href="{{ link.url }}"><i class="fa-lg {{ link.img }}"></i></a>
 		{% endfor %}
 	</p>
   <p>
-		nielmin © 2026
+		nielmin @ 2026
   </p>
 </footer>
