@@ -1,11 +1,19 @@
 <header>
 	<nav aria-label="Primary">
-    <h1><a href="/">{{ site.name }}</a></h1>
+    <h3>
+      <a href="/">{{ site.name }}</a>
+      <a href="#" id="theme-toggle" role="button" aria-label="Toggle Theme"></a>
+    </h3>
 		<ul>
+      [
 			{% for item in navigation.items %}
+      {% if loop.first %}
 			<li><a href="{{ item.url }}">{{ item.text }}</a></li>
+      {% else %}
+			• <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+      {% endif %}
 			{% endfor %}
-      <a href="#" id="theme-toggle" role="button" aria-label="Toggle Theme">☼</a>
+      ]
 		</ul>
 	</nav>
 </header>
