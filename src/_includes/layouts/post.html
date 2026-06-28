@@ -6,19 +6,19 @@
 
   <ul>
   tags:
-  {% for tag in tags %}
+  {% for tag in tags -%}
   <li><a href=/tags/{{ tag | lower }}>{{ tag }}</a></li>
-  {% endfor %}
+  {%- endfor -%}
   </ul>
 
   <p>
   Created:
   <time datetime="{{ page.date | readableDate }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
-  {% if modified %}
+  {%- if modified %}
   |
   Updated:
   <time datetime="{{ modified | readableDate }}" data-pagefind-sort="date">{{ modified | readableDate }}</time>
-  {% endif %}
+  {%- endif -%}
   </p>
 </div>
 
