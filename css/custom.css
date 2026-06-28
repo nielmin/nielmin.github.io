@@ -1,54 +1,65 @@
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
-  src: local("/static/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2")
-    format("woff2");
+  src: local("/static/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Atkinson Hyperlegible Mono";
-  src: local("/static/fonts/AtkinsonHyperlegibleMonoVF-Variable.woff2")
-    format("woff2");
+  src: local("/static/fonts/AtkinsonHyperlegibleMonoVF-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
 
+/* ==========================================================================
+   1. Design Tokens & Core Variables
+   ========================================================================== */
 :root {
+  /* Typography */
   --font-sans: "Atkinson Hyperlegible Next", sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", monospace;
+
+/* Upgraded Refined Color Palette */
   --bg-dark: #111111;
   --fg-dark: #f2f0e8;
-  --bg-light: #ffffff;
-  --fg-light: #1a1a1a;
-  --graphite: #2b2b21;
+  
+  --bg-light: #fbfbfa;       /* Soft eggshell reading background */
+  --fg-light: #242421;       /* Deep charcoal ink */
+  
+  --graphite: #3a3a33;       /* Balanced mid-tone for subtle elements */
   --light-gray: #c9c9c3;
   --gray: #e5e5e5;
-  --orange: #fb923c;
-  --yellow: #facc15;
+  
+  --orange: #f07e56;         /* A soft, creamy terracotta/pastel orange */
+  --yellow: #e2c26e;         /* Rich mustard tone so it doesn't wash out */
   --radius: 0px;
 
+  /* Concrete.css Variable Integration */
+  --bg: light-dark(var(--bg-light), var(--bg-dark));
+  --fg: light-dark(var(--fg-light), var(--fg-dark));
+  --font: var(--font-sans);
+
+  /* Document Standards */
   color-scheme: light dark;
-  background-color: light-dark(var(--bg-light), var(--bg-dark));
-  color: light-dark(var(--fg-light), var(--fg-dark));
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans);
   font-weight: 400;
 }
 
+/* ==========================================================================
+   2. Global Resets & Document Setup
+   ========================================================================== */
 html {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem); /* Fluid responsive scaling */
   box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
 }
 
 *, ::after, ::before {
   box-sizing: inherit;
   text-decoration-thickness: 0.1rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 body {
@@ -64,34 +75,34 @@ body > footer {
   width: 100%;
   max-width: 48rem;
   margin-inline: auto;
-  padding: 0 1.5rem 5vh 1.5rem;
-}
-
-body > header {
-  font-size: 1.2em;
-  text-align: center;
-
-  h1 {
-    font-family: var(--font-mono);
-  }
-
-  ul a {
-    color: light-dark(var(--graphite), var(--light-gray));
-  }
+  padding: 0 clamp(0.75rem, 0.5rem + 1vw, 1.5rem) 5vh clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
 }
 
 main {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   3. Typography & Headings
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6, code, pre {
   font-family: var(--font-mono);
+}
+
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
 h1 { 
   font-size: 2em; 
-  color: light-dark(lch(from var(--yellow) calc(l - 20) c h), var(--yellow)); 
+  color: light-dark(var(--yellow),var(--yellow)); 
 }
 h2 { font-size: 1.5em; }
 h3 { font-size: 1.17em; }
@@ -99,18 +110,9 @@ h4 { font-size: 1em; }
 h5 { font-size: 0.83em; }
 h6 { font-size: 0.67em; }
 
-code {
-  font-family: var(--font-mono);
-}
-
-blockquote {
-  font-weight: bolder;
-  font-style: italic;
-  border-left: 4px solid var(--orange);
-  padding-left: 1rem;
-  margin-inline: 0;
-}
-
+/* ==========================================================================
+   4. Links & Interactive Elements
+   ========================================================================== */
 a {
   color: light-dark(var(--fg-light), var(--fg-dark));
   transition: color 0.3s ease;
@@ -119,6 +121,204 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .2rem .5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: .5rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: .1rem solid var(--fg);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled {
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   5. Forms & Inputs
+   ========================================================================== */
+fieldset {
+  border: .1rem solid var(--fg);
+  border-radius: var(--radius);
+  margin: 0 0 .8rem 0;
+}
+
+label, legend {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .4rem;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea,
+select {
+  appearance: none;
+  box-shadow: none;
+  box-sizing: inherit;
+  padding: .2rem .5rem;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--fg);
+  background-color: var(--bg);
+  border: .1rem solid var(--fg);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  margin: 0 0 .8rem 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--fg);
+  font-style: italic;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   6. Data Display & Code Elements
+   ========================================================================== */
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: .4rem;
+  border-bottom: .05rem solid var(--fg);
+}
+
+th {
+  border-bottom: .1rem solid var(--fg);
+  text-align: left;
+}
+
+td:first-child, th:first-child { padding-left: 0; }
+td:last-child, th:last-child { padding-right: 0; }
+
+blockquote {
+  font-weight: bolder;
+  font-style: italic;
+  border-left: 4px solid var(--orange);
+  padding: .5rem .8rem .5rem 1rem;
+  margin: 1rem 0;
+}
+
+pre {
+  margin: 1rem 0;
+  padding: .5rem .8rem;
+  border: .05rem dotted var(--fg);
+  border-left: .1rem solid var(--fg);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+pre > code {
+  white-space: pre;
+  display: block;
+  font-size: .8rem;
+}
+
+/* ==========================================================================
+   7. Media & Specific Components
+   ========================================================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure { margin: 0; }
+
+figcaption {
+  text-align: right;
+  font-size: 0.8em;
+  border-bottom: .2rem solid var(--fg);
+  padding-bottom: .2rem;
+}
+
+progress {
+  appearance: none;
+  display: block;
+  height: .5rem;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  border: .1rem solid var(--fg);
+  border-radius: var(--radius);
+}
+
+progress::-webkit-progress-bar { background-color: var(--bg); }
+progress::-webkit-progress-value { background-color: var(--fg); }
+progress::-moz-progress-bar { background-color: var(--fg); }
+
+hr { border: .05rem solid var(--fg); }
+
+/* Navigation lists */
+nav ul {
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 .2rem;
+  display: inline-block;
+}
+
+.fa-sm  { width: 0.875em; height: 0.875em; }
+
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  .icon-sun {
+    diplay: none;
+  }
+  .icon-moon {
+    diplay: inline-block;
+  }
+}
+
+[data-theme="dark"] #theme-toggle {
+  .icon-sun { display: inline-block; }
+  .icon-moon { display: none; }
+}
+
+[data-theme="light"] #theme-toggle {
+  .icon-sun { display: none; }
+  .icon-moon { display: inline-block; }
+}
+
+/* ==========================================================================
+   8. Layout Components (Header, Article, Footer)
+   ========================================================================== */
+body > header {
+  font-size: 1.2em;
+  text-align: center;
+
+  ul a {
+    color: light-dark(var(--graphite), var(--light-gray));
+  }
 }
 
 .post-meta {
@@ -167,12 +367,10 @@ footer {
   padding: 2rem 1.5rem;
   font-size: large;
 
-  p {
-    margin: 0;
-  }
-
+  p { margin: 0; }
   a {
     color: inherit;
     text-decoration: underline;
   }
 }
+
