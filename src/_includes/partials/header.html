@@ -9,9 +9,9 @@
     </h3>
 		<ul>
       [
-			{% for item in navigation.items %}
+			{% for item in navigation.items -%}
       <li><a href="{{ item.url }}">{{ item.text }}</a></li>
-			{% endfor %}
+			{%- endfor %}
       ]
 		</ul>
 	</nav>
