@@ -63,9 +63,4 @@ But fanboys will do fanboy things.
 
 ## ⌨️ Keyboards
 
-I finished building the [forager](https://github.com/carrefinho/forager) in May 2026 after not being able to back in October 2025.
-
-I recently bought a broken [TOTEM Wireless](https://github.com/GEIGEIGEIST/TOTEM) from eBay for _cheap_.
-Using my (poor) soldering skills, I managed to fix the broken keys and am currently typing on the board itself.
-
-Previously I was using a [cheapino](https://github.com/tompi/cheapino) that I built myself, and before that a [Lily58](https://boardsource.xyz/products/lily58) and [Ergohaven Planeta](https://ergohaven.xyz/planeta) V1.
+[/splits](/splits)
