@@ -30,7 +30,7 @@
   const btn = document.getElementById('theme-toggle');
 
   function updateButtonIcon(theme){
-    btn.textContent = theme === 'dark' ? '☼' : '☾';
+    btn.textContent = theme === 'dark' ? '☀️' : '🌙';
   }
 
   const initialTheme = getComputedStyle(document.documentElement).colorScheme.includes('dark') ? 'dark' : 'light';
