@@ -1,7 +1,10 @@
-import { DateTime } from  require("luxon");
-import { feedPlugin } = from ("@11ty/eleventy-plugin-rss");
+import { DateTime } from "luxon";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import fontAwesomePlugin from "@11ty/font-awesome";
 
 export default async function (config) {
+  config.addPlugin(fontAwesomePlugin);
+
   config.addPlugin(feedPlugin, {
     type: "atom", // or "rss", "json"
 		outputPath: "/feed.xml",
