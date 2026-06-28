@@ -7,81 +7,70 @@
    viewBox="0 0 32 32"
    version="1.1"
    id="svg1"
-   sodipodi:docname="favicon.svg"
-   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#505050"
-     inkscape:document-units="px"
-     inkscape:zoom="25.610524"
-     inkscape:cx="3.6898894"
-     inkscape:cy="18.293261"
-     inkscape:window-width="2560"
-     inkscape:window-height="1370"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     showgrid="false" />
   <defs
-     id="defs1" />
+     id="defs1">
+    <linearGradient
+       id="linearGradient2">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient2"
+       id="linearGradient3"
+       x1="0.027467811"
+       y1="0.082403436"
+       x2="23.402575"
+       y2="20.957939"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <g
-     inkscape:label="Layer 1"
-     id="layer1"
-     transform="translate(9.6315307e-7,11.938683)">
-    <g
-       inkscape:groupmode="layer"
-       id="layer3"
-       inkscape:label="Layer 1"
-       transform="translate(-9.6315307e-7,-11.938683)">
-      <rect
-         style="fill:#000000"
-         id="rect3"
-         width="32"
-         height="32"
-         x="0"
-         y="0"
-         rx="1.5"
-         inkscape:label="rect3" />
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-size:18.6667px;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#ffffff;stroke-width:1.58397"
-       x="15.708332"
-       y="9.8946609"
-       id="text1"><tspan
-         sodipodi:role="line"
-         id="tspan1"
-         x="15.708332"
-         y="9.8946609"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Agave;-inkscape-font-specification:Agave;fill:#ffffff;stroke-width:1.58397">nlm</tspan></text>
+     id="layer2"
+     style="fill:url(#linearGradient3);fill-opacity:1">
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1"
+       id="rect3"
+       width="32.741631"
+       height="32.741631"
+       x="-0.37081528"
+       y="-0.37081528" />
   </g>
   <g
-     id="g2"
-     transform="matrix(0.75833138,0,0,0.46996849,3.8666972,13.467705)"
-     style="display:none">
-    <g
-       inkscape:groupmode="layer"
-       id="layer2"
-       inkscape:label="Layer 2">
-      <rect
-         style="fill:#ff6600;stroke-width:1.52351"
-         id="rect1"
-         width="33.099571"
-         height="3.9247074"
-         x="-0.5497846"
-         y="21.629808"
-         rx="0.60279256" />
-    </g>
+     id="layer1"
+     style="display:none"
+     transform="translate(0.87896996)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.5571px;font-family:'Agave Nerd Font Propo';-inkscape-font-specification:'Agave Nerd Font Propo';writing-mode:lr-tb;direction:ltr;fill:#ff8080;fill-opacity:1;stroke-width:2.62976"
+       x="-0.78079003"
+       y="25.861593"
+       id="text1"><tspan
+         id="tspan1"
+         x="-0.78079003"
+         y="25.861593"
+         style="fill:#ff8080;fill-opacity:1;stroke-width:2.62976">dH</tspan></text>
+  </g>
+  <g
+     id="g3"
+     style="display:inline"
+     transform="translate(-0.68669529)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.4212px;font-family:'Agave Nerd Font Propo';-inkscape-font-specification:'Agave Nerd Font Propo';writing-mode:lr-tb;direction:ltr;fill:#f9f9f9;fill-opacity:1;stroke-width:3.11843"
+       x="-2.0239046"
+       y="27.694124"
+       id="text3"><tspan
+         id="tspan3"
+         x="-2.0239046"
+         y="27.694124"
+         style="fill:#f9f9f9;fill-opacity:1;stroke-width:3.11843">nL</tspan></text>
   </g>
 </svg>
