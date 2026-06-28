@@ -282,7 +282,7 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 .2rem;
+  margin: 0 .3rem;
   display: inline-block;
 }
 
@@ -333,7 +333,7 @@ body > header {
 
   li {
     display: inline-block;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 }
 
