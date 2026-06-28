@@ -19,17 +19,20 @@
   /* Typography */
   --font-sans: "Atkinson Hyperlegible Next", sans-serif;
   --font-mono: "Atkinson Hyperlegible Mono", monospace;
-  
-  /* Color Palette */
+
+/* Upgraded Refined Color Palette */
   --bg-dark: #111111;
   --fg-dark: #f2f0e8;
-  --bg-light: #ffffff;
-  --fg-light: #1a1a1a;
-  --graphite: #2b2b21;
+  
+  --bg-light: #fbfbfa;       /* Soft eggshell reading background */
+  --fg-light: #242421;       /* Deep charcoal ink */
+  
+  --graphite: #3a3a33;       /* Balanced mid-tone for subtle elements */
   --light-gray: #c9c9c3;
   --gray: #e5e5e5;
-  --orange: #fb923c;
-  --yellow: #facc15;
+  
+  --orange: #f07e56;         /* A soft, creamy terracotta/pastel orange */
+  --yellow: #e2c26e;         /* Rich mustard tone so it doesn't wash out */
   --radius: 0px;
 
   /* Concrete.css Variable Integration */
@@ -99,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { 
   font-size: 2em; 
-  color: light-dark(lch(from var(--yellow) calc(l - 20) c h), var(--yellow)); 
+  color: light-dark(var(--yellow),var(--yellow)); 
 }
 h2 { font-size: 1.5em; }
 h3 { font-size: 1.17em; }
