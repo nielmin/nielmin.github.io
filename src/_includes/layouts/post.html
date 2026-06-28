@@ -13,11 +13,11 @@
 
   <p>
   Created:
-  <time datetime="{{ page.date | readableDate }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
+  <time datetime="{{ page.date | isoDate }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
   {%- if modified %}
   |
   Updated:
-  <time datetime="{{ modified | readableDate }}" data-pagefind-sort="date">{{ modified | readableDate }}</time>
+  <time datetime="{{ modified | isoDate }}" data-pagefind-sort="date">{{ modified | readableDate }}</time>
   {%- endif -%}
   </p>
 </div>
