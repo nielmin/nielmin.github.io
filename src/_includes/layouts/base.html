@@ -26,4 +26,27 @@
 
 </body>
 
+<script>
+  const btn = document.getElementById('theme-toggle');
+
+  function updateButtonIcon(theme){
+    btn.textContent = theme === 'dark' ? '☼' : '☾';
+  }
+
+  const initialTheme = getComputedStyle(document.documentElement).colorScheme.includes('dark') ? 'dark' : 'light';
+  updateButtonIcon(initialTheme);
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const isDark = getComputedStyle(document.documentElement).colorScheme.includes('dark');
+    const newTheme = isDark ? 'light' : 'dark';
+
+    document.documentElement.style.colorScheme = newTheme;
+    localStorage.setItem('theme', newTheme);
+
+    updateButtonIcon(newTheme);
+  });
+</script>
+
 </html>

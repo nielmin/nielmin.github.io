@@ -5,6 +5,15 @@
 			{% for item in navigation.items %}
 			<li><a href="{{ item.url }}">{{ item.text }}</a></li>
 			{% endfor %}
+      <a href="#" id="theme-toggle" role="button" aria-label="Toggle Theme">☼</a>
 		</ul>
 	</nav>
 </header>
+<script>
+  (function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.style.colorScheme = savedTheme;
+    }
+})();
+</script>
