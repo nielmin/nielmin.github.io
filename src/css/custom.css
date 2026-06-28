@@ -276,6 +276,17 @@ nav ul li {
   display: inline-block;
 }
 
+.theme-icon-hidden {
+  display: none !important;
+}
+
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+}
+
+.fa-sm  { width: 0.875em; height: 0.875em; }
+
 /* ==========================================================================
    8. Layout Components (Header, Article, Footer)
    ========================================================================== */
@@ -340,3 +351,4 @@ footer {
     text-decoration: underline;
   }
 }
+
