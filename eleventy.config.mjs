@@ -1,7 +1,7 @@
-const { DateTime } = require("luxon");
-const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
+import { DateTime } from  require("luxon");
+import { feedPlugin } = from ("@11ty/eleventy-plugin-rss");
 
-module.exports = (config) => {
+export default async function (config) {
   config.addPlugin(feedPlugin, {
     type: "atom", // or "rss", "json"
 		outputPath: "/feed.xml",
@@ -19,6 +19,7 @@ module.exports = (config) => {
 			}
 		}
   });
+
   config.addWatchTarget("static");
 
   config.addPassthroughCopy({ "static/icons": "/icons" });
