@@ -1,34 +1,38 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-
-<div class='post-meta'>
-
-  <ul>
-  tags:
-  {% for tag in tags -%}
-  <li><a href=/tags/{{ tag | lower }}>{{ tag }}</a></li>
-  {%- endfor -%}
-  </ul>
-
-  <p>
-  Created:
-  <time datetime="{{ page.date | isoDate }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time>
-  {%- if modified %}
-  |
-  Updated:
-  <time datetime="{{ modified | isoDate }}" data-pagefind-sort="date">{{ modified | readableDate }}</time>
-  {%- endif -%}
-  </p>
-</div>
-
 <h1>{{ title }}</h1>
+<aside class="post-meta" aria-label="Post metadata">
+  <dl>
+    <div>
+      <dt>Tags</dt>
+      <dd>
+        {%- for tag in tags -%}
+          <a href="/tags/{{ tag | lower }}/" rel="tag">{{ tag }}</a>
+          {%- if not loop.last %}, {% endif -%}
+        {%- endfor -%}
+      </dd>
+    </div>
 
-  {% if summary %}
-  <blockquote>
+    <div>
+      <dt>Published</dt>
+      <dd><time datetime="{{ page.date | isoDate }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time></dd>
+    </div>
+
+    {%- if modified -%}
+    <div>
+      <dt>Updated</dt>
+      <dd><time datetime="{{ modified | isoDate }}">{{ modified | readableDate }}</time></dd>
+    </div>
+    {%- endif -%}
+  </dl>
+</aside>
+
+{% if summary %}
+  <blockquote role="doc-introduction">
     {{ summary }}
   </blockquote>
-  {% endif %}
+{% endif %}
 
 <article>
   {{ content | safe }}

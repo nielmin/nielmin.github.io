@@ -324,16 +324,31 @@ body > header {
 .post-meta {
   font-size: medium;
 
-  ul {
-    font-family: var(--font-mono);
-    margin: 0;
+  dl {
+    margin: 0 1rem;
     padding: 0;
-    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  li {
-    display: inline-block;
-    margin-right: 0.5rem;
+  dd {
+    margin: 0 0.3rem;
+    padding: 0;
+    gap: 1rem;
+
+  }
+
+  div {
+    display: flex;
+    font-family: var(--font-mono);
+  }
+
+  dt {
+    font-weight: bold;
+  }
+  dt::after {
+    content: ":";
   }
 }
 
