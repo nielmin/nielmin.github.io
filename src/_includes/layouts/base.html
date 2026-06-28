@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+      document.documentElement.style.colorScheme = savedTheme || systemTheme;
+    })();
+  </script>
   <link rel="stylesheet" href="/css/custom.css">
   <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
@@ -28,37 +36,17 @@
 
 <script>
   const btn = document.getElementById('theme-toggle');
-  
-  // Target the icon classes directly (works whether they are <i> tags or converted to <svg>)
-  const sunIcon = btn.querySelector('.icon-sun');
-  const moonIcon = btn.querySelector('.icon-moon');
-
-  function updateButtonIcon(theme) {
-    if (theme === 'dark') {
-      // In dark mode, show the Sun icon and hide the Moon
-      sunIcon.classList.remove('theme-icon-hidden');
-      moonIcon.classList.add('theme-icon-hidden');
-    } else {
-      // In light mode, show the Moon icon and hide the Sun
-      moonIcon.classList.remove('theme-icon-hidden');
-      sunIcon.classList.add('theme-icon-hidden');
-    }
-  }
-
-  // Determine initial theme state
-  const initialTheme = getComputedStyle(document.documentElement).colorScheme.includes('dark') ? 'dark' : 'light';
-  updateButtonIcon(initialTheme);
+  const root = document.documentElement;
 
   btn.addEventListener('click', (e) => {
-    e.preventDefault(); // Stop the '#' link from snapping the page to the top
-
-    const isDark = getComputedStyle(document.documentElement).colorScheme.includes('dark');
-    const newTheme = isDark ? 'light' : 'dark';
-
-    document.documentElement.style.colorScheme = newTheme;
+    e.preventDefault();
+    
+    const currentTheme = root.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    root.setAttribute('data-theme', newTheme);
+    root.style.colorScheme = newTheme;
     localStorage.setItem('theme', newTheme);
-
-    updateButtonIcon(newTheme);
   });
 </script>
 

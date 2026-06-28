@@ -10,21 +10,9 @@
 		<ul>
       [
 			{% for item in navigation.items %}
-      {% if loop.first %}
-			<li><a href="{{ item.url }}">{{ item.text }}</a></li>
-      {% else %}
-			• <li><a href="{{ item.url }}">{{ item.text }}</a></li>
-      {% endif %}
+      <li><a href="{{ item.url }}">{{ item.text }}</a></li>
 			{% endfor %}
       ]
 		</ul>
 	</nav>
 </header>
-<script>
-  (function () {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.documentElement.style.colorScheme = savedTheme;
-    }
-})();
-</script>

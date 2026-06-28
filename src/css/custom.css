@@ -276,16 +276,28 @@ nav ul li {
   display: inline-block;
 }
 
-.theme-icon-hidden {
-  display: none !important;
-}
+.fa-sm  { width: 0.875em; height: 0.875em; }
 
 #theme-toggle {
   display: inline-flex;
   align-items: center;
+  .icon-sun {
+    diplay: none;
+  }
+  .icon-moon {
+    diplay: inline-block;
+  }
 }
 
-.fa-sm  { width: 0.875em; height: 0.875em; }
+[data-theme="dark"] #theme-toggle {
+  .icon-sun { display: inline-block; }
+  .icon-moon { display: none; }
+}
+
+[data-theme="light"] #theme-toggle {
+  .icon-sun { display: none; }
+  .icon-moon { display: inline-block; }
+}
 
 /* ==========================================================================
    8. Layout Components (Header, Article, Footer)
