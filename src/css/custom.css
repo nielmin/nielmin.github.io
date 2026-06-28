@@ -292,10 +292,10 @@ nav ul li {
   display: inline-flex;
   align-items: center;
   .icon-sun {
-    diplay: none;
+    display: none;
   }
   .icon-moon {
-    diplay: inline-block;
+    display: inline-block;
   }
 }
 
