@@ -1,9 +1,10 @@
 {% extends "layouts/base.html" %}
 
-<h2>Posts Tagged With “{{ tag }}”</h2>
-
 {% block content %}
+
 <div class=tag-list>
+<h3>Posts Tagged With “{{ tag | lower }}”</h3>
+
 <ul>
   {% set taglist = collections[ tag ] %}
   {% for post in taglist | reverse %}
