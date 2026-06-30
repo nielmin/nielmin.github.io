@@ -371,6 +371,9 @@ article {
       transform: scale(1.02);
     }
   }
+  li {
+    list-style: none;
+  }
 }
 
 .tag-list ul a {
