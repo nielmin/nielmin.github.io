@@ -7,70 +7,29 @@
    viewBox="0 0 32 32"
    version="1.1"
    id="svg1"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1">
-    <linearGradient
-       id="linearGradient2">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop2" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop3" />
-    </linearGradient>
-    <linearGradient
-       xlink:href="#linearGradient2"
-       id="linearGradient3"
-       x1="0.027467811"
-       y1="0.082403436"
-       x2="23.402575"
-       y2="20.957939"
-       gradientUnits="userSpaceOnUse" />
-  </defs>
-  <g
-     id="layer2"
-     style="fill:url(#linearGradient3);fill-opacity:1">
-    <rect
-       style="fill:#1a1a1a;fill-opacity:1"
-       id="rect3"
-       width="32.741631"
-       height="32.741631"
-       x="-0.37081528"
-       y="-0.37081528" />
-  </g>
+     id="defs1" />
   <g
      id="layer1"
-     style="display:none"
-     transform="translate(0.87896996)">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.5571px;font-family:'Agave Nerd Font Propo';-inkscape-font-specification:'Agave Nerd Font Propo';writing-mode:lr-tb;direction:ltr;fill:#ff8080;fill-opacity:1;stroke-width:2.62976"
-       x="-0.78079003"
-       y="25.861593"
-       id="text1"><tspan
-         id="tspan1"
-         x="-0.78079003"
-         y="25.861593"
-         style="fill:#ff8080;fill-opacity:1;stroke-width:2.62976">dH</tspan></text>
+     style="display:inline">
+    <rect
+       style="fill:#1a1a1a"
+       id="rect1"
+       width="32.008568"
+       height="32.008568"
+       x="-0.004283905"
+       y="-0.004283905" />
   </g>
-  <g
-     id="g3"
-     style="display:inline"
-     transform="translate(-0.68669529)">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.4212px;font-family:'Agave Nerd Font Propo';-inkscape-font-specification:'Agave Nerd Font Propo';writing-mode:lr-tb;direction:ltr;fill:#f9f9f9;fill-opacity:1;stroke-width:3.11843"
-       x="-2.0239046"
-       y="27.694124"
-       id="text3"><tspan
-         id="tspan3"
-         x="-2.0239046"
-         y="27.694124"
-         style="fill:#f9f9f9;fill-opacity:1;stroke-width:3.11843">nL</tspan></text>
-  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.7853px;font-family:'Agave Nerd Font';-inkscape-font-specification:'Agave Nerd Font Bold';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke-width:2.39877"
+     x="1.6073503"
+     y="24.995405"
+     id="text3"><tspan
+       id="tspan3"
+       x="1.6073503"
+       y="24.995405"
+       style="fill:#ececec;stroke-width:2.39877">nL</tspan></text>
 </svg>
