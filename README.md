@@ -2,7 +2,6 @@
 
 ## TODO
 - [ ] Custom classless CSS based off of [concrete.css](https://concrete.style/)
-- [ ] Add dark-mode toggle
 
 ## DONE
 - [X] Tags Pagination
@@ -14,6 +13,7 @@
 - [X] ~Switched to [concrete.css](https://concrete.style/)~
 - [X] A 'Now' feed instead of a constantly changing page 
 - [X] Add 'Last Modified' next to creation date
+- [X] ~Add dark-mode toggle~Not necessary
 
 ## FYI
 
