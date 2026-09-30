@@ -2,14 +2,6 @@
 <html lang="en">
 
 <head>
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
-      document.documentElement.style.colorScheme = savedTheme || systemTheme;
-    })();
-  </script>
   <link rel="stylesheet" href="/css/custom.css">
   <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
@@ -73,22 +65,6 @@ Welcome to my site.
 
 
 </body>
-
-<script>
-  const btn = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    const currentTheme = root.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    root.setAttribute('data-theme', newTheme);
-    root.style.colorScheme = newTheme;
-    localStorage.setItem('theme', newTheme);
-  });
-</script>
 
 </html>
 
