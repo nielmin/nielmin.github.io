@@ -1,11 +1,12 @@
 <header>
   <h1>{{ site.name }}</h1>
-  {% for link in socials.links %}
-  <a href="{{ link.url }}"><i class="fa-lg {{ link.img }}"></i></a>
-  {% endfor %}
+
   <nav aria-label="Primary">
     {% for item in navigation.items %}
-    /<a href="{{ item.url }}">{{ item.text }}</a>
+    <a href="{{ item.url }}">{{ item.text }}</a>
+    {%if not loop.last %}
+    •
+    {% endif %}
     {% endfor %}
   </nav>
 </header>
