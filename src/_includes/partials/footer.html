@@ -1,2 +1,5 @@
 <footer>
+  {% for link in socials.links %}
+  <a href="{{ link.url }}"><i class="fa-lg {{ link.img }}"></i></a>
+  {% endfor %}
 </footer>
