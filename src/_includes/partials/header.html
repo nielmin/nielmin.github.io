@@ -1,12 +1,10 @@
 <header>
-	<nav aria-label="Primary">
-    <h3>
-      <a href="/">{{ site.name }}</a>
-    </h3>
-		<ul>
-			{% for item in navigation.items -%}
-      <li><a href="{{ item.url }}">{{ item.text }}</a></li>
-			{%- endfor %}
-		</ul>
-	</nav>
+  <h1>
+    {{ site.name }}
+  </h1>
+  <nav aria-label="Primary">
+    {% for item in navigation.items %}
+    /<a href="{{ item.url }}">{{ item.text }}</a>
+    {% endfor %}
+  </nav>
 </header>
