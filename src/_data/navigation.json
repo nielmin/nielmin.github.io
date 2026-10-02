@@ -1,6 +1,10 @@
 {
   "items": [
     {
+      "text": "home",
+      "url": "/"
+    },
+    {
       "text": "blog",
       "url": "/blog/"
     },
