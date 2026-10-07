@@ -305,10 +305,10 @@ I know what I want from a keyboard, and the only way to get it is to design one 
 </content>
   </entry>
   <entry>
-    <title>My NAS Migration: From Ubuntu to NixOS</title>
-    <link href="https://nielmin.github.io/blog/my-nas-migration-from-ubuntu-to-nixos/" />
+    <title>My NAS: From Ubuntu to NixOS</title>
+    <link href="https://nielmin.github.io/blog/my-nas-from-ubuntu-to-nixos/" />
     <updated>2026-10-07T00:00:00Z</updated>
-    <id>https://nielmin.github.io/blog/my-nas-migration-from-ubuntu-to-nixos/</id>
+    <id>https://nielmin.github.io/blog/my-nas-from-ubuntu-to-nixos/</id>
     <content type="html">&lt;p&gt;Ever since I switched to NixOS as my daily driver, I&#39;ve been meaning to convert all my systems over.&lt;/p&gt;
 &lt;p&gt;When I first started learning NixOS, the first victim was my laptop.
 Then, once I got more comfortable, I converted my OctoPrint server.
