@@ -1,19 +1,18 @@
 # My personal [site](https://nielmin.github.io)
 
-## TODO
-- [ ] Custom classless CSS based off of [concrete.css](https://concrete.style/)
-
+The site now uses [new.css](https://newcss.net/) instead of [concrete.css](https://concrete.style).
 ## DONE
-- [X] Tags Pagination
-- [X] Incorporate tags in posts
-- [X] Sort blog posts by year date month in reverse chronology
-- [X] If no blog posts exists, site gives generic 404
-- [X] Create custom 404 page
-- [X] Add RSS plugin
-- [X] ~Switched to [concrete.css](https://concrete.style/)~
-- [X] A 'Now' feed instead of a constantly changing page 
-- [X] Add 'Last Modified' next to creation date
-- [X] ~Add dark-mode toggle~Not necessary
+- [x] ~Custom classless CSS based off of [concrete.css](https://concrete.style/)~
+- [x] Tags Pagination
+    - [x] Incorporate tags in posts
+- [x] Sort blog posts by year date month in reverse chronology
+- [x] Create custom 404 page
+    - [x] If no blog posts exists, site gives generic 404
+- [x] Add RSS plugin
+- [x] ~Switched to [concrete.css](https://concrete.style/)~
+- [x] ~A 'Now' feed instead of a constantly changing page~ Removed
+- [x] Add 'Last Modified' next to creation date
+- [x] ~Add dark-mode toggle~Not necessary
 
 ## FYI
 
