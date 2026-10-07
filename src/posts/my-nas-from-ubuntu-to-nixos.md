@@ -1,5 +1,5 @@
 ---
-title: 'My NAS Migration: From Ubuntu to NixOS'
+title: 'My NAS: From Ubuntu to NixOS'
 date: 2026-10-07
 modified: 
 tags: [ 'Selfhost', 'Linux','NixOS' ]
