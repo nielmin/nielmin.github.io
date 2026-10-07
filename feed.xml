@@ -4,7 +4,7 @@
   <subtitle>Blog posts from nielmin&#39;s personal site</subtitle>
   <link href="https://nielmin.github.io/feed.xml" rel="self" />
   <link href="https://nielmin.github.io/" />
-  <updated>2026-06-11T00:00:00Z</updated>
+  <updated>2026-10-07T00:00:00Z</updated>
   <id>https://nielmin.github.io/</id>
   <author>
     <name>nielmin</name>
@@ -302,6 +302,181 @@ So I think my true endgame would have to be a custom one that I design myself us
 I&#39;ve learned all that I could about soldering and electronics from this hobby, and I no longer want to spend the time or money building other people&#39;s designs.
 I know what I want from a keyboard, and the only way to get it is to design one myself.&lt;/p&gt;
 &lt;p&gt;So, unless something changes, the Ferris Sweep is the last keyboard that I build.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>My NAS Migration: From Ubuntu to NixOS</title>
+    <link href="https://nielmin.github.io/blog/my-nas-migration-from-ubuntu-to-nixos/" />
+    <updated>2026-10-07T00:00:00Z</updated>
+    <id>https://nielmin.github.io/blog/my-nas-migration-from-ubuntu-to-nixos/</id>
+    <content type="html">&lt;p&gt;Ever since I switched to NixOS as my daily driver, I&#39;ve been meaning to convert all my systems over.&lt;/p&gt;
+&lt;p&gt;When I first started learning NixOS, the first victim was my laptop.
+Then, once I got more comfortable, I converted my OctoPrint server.
+After even more time, I converted my main desktop over from Fedora Workstation KDE.&lt;/p&gt;
+&lt;p&gt;Each time I switched, I became more familiar with Nix, and this attempt was no different.&lt;/p&gt;
+&lt;p&gt;But first...&lt;/p&gt;
+&lt;h3&gt;What does my NAS do?&lt;/h3&gt;
+&lt;p&gt;With a &lt;em&gt;whopping&lt;/em&gt; &lt;strong&gt;3 TB&lt;/strong&gt; or raw storage, my NAS (Network Attached Storage) hosted:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Samba shares&lt;/li&gt;
+&lt;li&gt;Syncthing&lt;/li&gt;
+&lt;li&gt;Restic REST&lt;/li&gt;
+&lt;li&gt;qBittorrent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My actual homelab is in a Proxmox VM on another machine, so my NAS is very minimal.
+Therefore, replicating my Ubuntu setup in NixOS services was easy.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Syncthing and qBittorrent
+{
+    networking.firewall.allowedTCPPorts = [ 8384 ];
+    services = {
+        syncthing = {
+            enable = true;
+            user = &amp;quot;${user.userName}&amp;quot;;
+            group = &amp;quot;${user.userName}&amp;quot;;
+            dataDir = &amp;quot;/home/${user.userName}&amp;quot;;
+            openDefaultPorts = true;
+            guiAddress = &amp;quot;0.0.0.0:8384&amp;quot;;
+        };
+        qbittorrent = {
+            enable = true;
+            user = &amp;quot;${user.userName}&amp;quot;;
+            group = &amp;quot;${user.userName}&amp;quot;;
+            webuiPort = 8081;
+            extraArgs = [ &amp;quot;--confirm-legal-notice&amp;quot; ];
+            openFirewall = true;
+        };
+    };
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# Restic Nix service
+{
+    sops.secrets.&amp;quot;restic_server&amp;quot; = {
+        sopsFile = ../../secrets/secrets.yaml;
+        key = &amp;quot;restic_server&amp;quot;;
+        owner = &amp;quot;restic&amp;quot;;
+        group = &amp;quot;restic&amp;quot;;
+    };
+    services.restic.server = {
+        enable = true;
+        htpasswd-file = config.sops.secrets.&amp;quot;restic_server&amp;quot;.path;
+    };
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;
+# Samba Server
+{
+    services.samba = {
+        package = pkgs.sambaFull;
+        # package = pkgs.samba4Full.override {
+        #   enableCephFS = false;
+        # };
+        enable = true;
+        openFirewall = true;
+        settings = {
+            global = {
+                &amp;quot;usershare max shares&amp;quot; = 100;
+                &amp;quot;create mask&amp;quot; = &amp;quot;0755&amp;quot;;
+                &amp;quot;directory mask&amp;quot; = &amp;quot;2755&amp;quot;;
+                &amp;quot;force create mode&amp;quot; = &amp;quot;0755&amp;quot;;
+                &amp;quot;force directory mode&amp;quot; = &amp;quot;2755&amp;quot;;
+            };
+
+            emi = {
+                path = &amp;quot;/epool/data&amp;quot;;
+                browseable = true;
+                writable = true;
+            };
+
+            kai = {
+                path = &amp;quot;/kpool/media&amp;quot;;
+                browseable = true;
+                writable = true;
+            };
+
+            mari = {
+                path = &amp;quot;/kpool/data&amp;quot;;
+                browseable = true;
+                writable = true;
+            };
+        };
+    };
+
+    # To be discoverable with windows
+    services.samba-wsdd = {
+        enable = true;
+        openFirewall = true;
+    };
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Translating my &lt;code&gt;smb.conf&lt;/code&gt;to the Nix language was pretty straightforward, mostly because the config itself was very simple.
+No one but me in our house is using SMB shares.&lt;/p&gt;
+&lt;p&gt;The only problem I ran into was with &lt;code&gt;pkgs.sambaFull&lt;/code&gt;.
+Due to an upgrade in &lt;code&gt;gcc&lt;/code&gt;, &lt;code&gt;ceph&lt;/code&gt;, which is a build input for the full Samba server, was &lt;a href=&quot;https://github.com/NixOS/nixpkgs/issues/569044&quot;&gt;failing to build&lt;/a&gt;.
+Hence the commented out package &lt;code&gt;override&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I had to wait a day or two before the &lt;a href=&quot;https://github.com/NixOS/nixpkgs/pull/569264&quot;&gt;PR&lt;/a&gt; was merged into &lt;code&gt;nixos-unstable&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;What about muh data?&lt;/h3&gt;
+&lt;p&gt;The biggest reason why this migration took as long as it did was because I was worried about losing data.
+I basically forgot everything I knew about ZFS, so I thought I had to use manually mount them using &lt;code&gt;fileSystems&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Even worse, I thought I had to use &lt;code&gt;disko&lt;/code&gt; to manage them since the rest of my machines don&#39;t have a &lt;code&gt;fileSystems&lt;/code&gt; declaration.&lt;/p&gt;
+&lt;p&gt;Luckily, I didn&#39;t, and I asked AI to assuage my worries.&lt;/p&gt;
+&lt;p&gt;Apparently, ZFS is a lot smarter and powerful than I thought.
+As long as I exported my pools (&lt;code&gt;zpool export tank&lt;/code&gt;) before installing Nix, NixOS would automatically import them if specified:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    boot = {
+        supportedFilesystems = {
+            btrfs = true;
+            zfs = true;
+        };
+        zfs = {
+            forceImportRoot = false;
+            extraPools = [
+                &amp;quot;emi&amp;quot;
+                kai&amp;quot;
+            ];
+        };
+    };
+
+    networking.hostId = &amp;quot;aba04682&amp;quot;;
+
+    services.zfs.autoScrub.enable = true;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So all of my mount points would be the same as it was on Ubuntu.&lt;/p&gt;
+&lt;h3&gt;The Last Hurdle: Understanding sops-nix&lt;/h3&gt;
+&lt;p&gt;In my &lt;a href=&quot;https://github.com/nielmin/nixos-config&quot;&gt;&lt;code&gt;nixos-config&lt;/code&gt;&lt;/a&gt;, I&#39;m using &lt;code&gt;sops-nix&lt;/code&gt; to encrypt passwords before committing to Github.
+The only issue is that I didn&#39;t really understand how it worked.&lt;/p&gt;
+&lt;p&gt;Initially, my intuition was to store the host ssh keys with &lt;code&gt;sops-nix&lt;/code&gt; so that I didn&#39;t have to worry about losing them.
+But I ran into a &amp;quot;chicken-and-egg&amp;quot; problem when I tried installing it using &lt;code&gt;nixos-anywhere&lt;/code&gt; and &lt;code&gt;disko&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I wanted &lt;code&gt;sops-nix&lt;/code&gt; to decrypt the key and put it in the proper location (&lt;code&gt;/etc/ssh/ssh_ed25519_host_key&lt;/code&gt;).
+But &lt;code&gt;sops&lt;/code&gt; couldn&#39;t decrypt the secret because it was missing &lt;code&gt;ssh_ed25519_host_key&lt;/code&gt;.
+And the &lt;code&gt;ssh_ed25519_host_key&lt;/code&gt; didn&#39;t exist because &lt;code&gt;sops-nix&lt;/code&gt; hadn&#39;t decrypt yet.&lt;/p&gt;
+&lt;p&gt;Ultimately, I realized that using &lt;code&gt;sops&lt;/code&gt; to manage a host&#39;s key pair wasn&#39;t a good idea, and that I should just make host keys ephemeral and generate them when needed.&lt;/p&gt;
+&lt;p&gt;In order to get the host keys to the bootstrapped machine, I needed to use the &lt;code&gt;--extra-files&lt;/code&gt; flag in &lt;code&gt;nixos-anywhere&lt;/code&gt; and pass in a directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Boostrapping a new NixOS host
+
+ssh-keygen -t 25519 -f /path/to/tmp/directory
+
+# The directory structure needs to emulate / (root)
+# &#39;ssh_ed25519_host_key&#39; goes in /etc/ssh
+# So the folder would be /extra-files/etc/ssh/ssh_ed25519_host_key
+
+nixos-anywhere --extra-files /path/to/tmp/directory &#92;
+    --flake .#foo &#92;
+    --target-host nixos@192.168.1.144
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once I understood how to work with &lt;code&gt;sops-nix&lt;/code&gt;, everything fell into place.
+&lt;code&gt;nixos-anywhere&lt;/code&gt; finished installing, and I could ssh into my NAS and access my SMB shares.&lt;/p&gt;
+&lt;p&gt;Before migrating, I shutdown my homelab VM just case, and when I booted it back up, none of my services complained about missing volume mounts.
+Surprisingly, everything worked as exactly as it did before.&lt;/p&gt;
+&lt;p&gt;I would call that a successful migration.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;There is a certain joy I feel knowing that all of my computers are managed with a single Nix configuration.
+The fact that the state of all of my machines are exactly the same and come from a single &lt;code&gt;flake.lock&lt;/code&gt; file is really freaking cool.&lt;/p&gt;
+&lt;p&gt;I should&#39;ve have done this sooner.&lt;/p&gt;
 </content>
   </entry>
 </feed>

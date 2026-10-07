@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/css/new.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>My NAS Migration: From Ubuntu to NixOS | nielmin</title>
+</head>
+
+<body>
+
+  <header>
+  <h1>nielmin</h1>
+
+  <nav aria-label="Primary">
+    
+    <a href="/">home</a>
+    
+    •
+    
+    
+    <a href="/blog/">blog</a>
+    
+    •
+    
+    
+    <a href="/uses/">uses</a>
+    
+    •
+    
+    
+    <a href="/splits/">splits</a>
+    
+    
+  </nav>
+</header>
+
+
+  <main>
+    <section>
+    
+<h2>My NAS Migration: From Ubuntu to NixOS</h2>
+<div class="post-meta" aria-label="Post metadata">
+  Published:
+  <time datetime="2026-10-06" data-pagefind-sort="date">Oct 06 2026 | </time><ul class="tags-list">
+    tags:
+    
+    <li>
+      <a href="/tags/selfhost/" rel="tag">selfhost</a>, </li>
+    <li>
+      <a href="/tags/linux/" rel="tag">linux</a>, </li>
+    <li>
+      <a href="/tags/nixos/" rel="tag">nixos</a></li></ul>
+</div>
+
+
+
+<article><p>Ever since I switched to NixOS as my daily driver, I've been meaning to convert all my systems over.</p>
+<p>When I first started learning NixOS, the first victim was my laptop.
+Then, once I got more comfortable, I converted my OctoPrint server.
+After even more time, I converted my main desktop over from Fedora Workstation KDE.</p>
+<p>Each time I switched, I became more familiar with Nix, and this attempt was no different.</p>
+<p>But first...</p>
+<h3>What does my NAS do?</h3>
+<p>With a <em>whopping</em> <strong>3 TB</strong> or raw storage, my NAS (Network Attached Storage) hosted:</p>
+<ul>
+<li>Samba shares</li>
+<li>Syncthing</li>
+<li>Restic REST</li>
+<li>qBittorrent</li>
+</ul>
+<p>My actual homelab is in a Proxmox VM on another machine, so my NAS is very minimal.
+Therefore, replicating my Ubuntu setup in NixOS services was easy.</p>
+<pre><code># Syncthing and qBittorrent
+{
+    networking.firewall.allowedTCPPorts = [ 8384 ];
+    services = {
+        syncthing = {
+            enable = true;
+            user = &quot;${user.userName}&quot;;
+            group = &quot;${user.userName}&quot;;
+            dataDir = &quot;/home/${user.userName}&quot;;
+            openDefaultPorts = true;
+            guiAddress = &quot;0.0.0.0:8384&quot;;
+        };
+        qbittorrent = {
+            enable = true;
+            user = &quot;${user.userName}&quot;;
+            group = &quot;${user.userName}&quot;;
+            webuiPort = 8081;
+            extraArgs = [ &quot;--confirm-legal-notice&quot; ];
+            openFirewall = true;
+        };
+    };
+}
+
+</code></pre>
+<pre><code># Restic Nix service
+{
+    sops.secrets.&quot;restic_server&quot; = {
+        sopsFile = ../../secrets/secrets.yaml;
+        key = &quot;restic_server&quot;;
+        owner = &quot;restic&quot;;
+        group = &quot;restic&quot;;
+    };
+    services.restic.server = {
+        enable = true;
+        htpasswd-file = config.sops.secrets.&quot;restic_server&quot;.path;
+    };
+}
+
+</code></pre>
+<pre><code>
+# Samba Server
+{
+    services.samba = {
+        package = pkgs.sambaFull;
+        # package = pkgs.samba4Full.override {
+        #   enableCephFS = false;
+        # };
+        enable = true;
+        openFirewall = true;
+        settings = {
+            global = {
+                &quot;usershare max shares&quot; = 100;
+                &quot;create mask&quot; = &quot;0755&quot;;
+                &quot;directory mask&quot; = &quot;2755&quot;;
+                &quot;force create mode&quot; = &quot;0755&quot;;
+                &quot;force directory mode&quot; = &quot;2755&quot;;
+            };
+
+            emi = {
+                path = &quot;/epool/data&quot;;
+                browseable = true;
+                writable = true;
+            };
+
+            kai = {
+                path = &quot;/kpool/media&quot;;
+                browseable = true;
+                writable = true;
+            };
+
+            mari = {
+                path = &quot;/kpool/data&quot;;
+                browseable = true;
+                writable = true;
+            };
+        };
+    };
+
+    # To be discoverable with windows
+    services.samba-wsdd = {
+        enable = true;
+        openFirewall = true;
+    };
+}
+
+</code></pre>
+<p>Translating my <code>smb.conf</code>to the Nix language was pretty straightforward, mostly because the config itself was very simple.
+No one but me in our house is using SMB shares.</p>
+<p>The only problem I ran into was with <code>pkgs.sambaFull</code>.
+Due to an upgrade in <code>gcc</code>, <code>ceph</code>, which is a build input for the full Samba server, was <a href="https://github.com/NixOS/nixpkgs/issues/569044">failing to build</a>.
+Hence the commented out package <code>override</code>.</p>
+<p>I had to wait a day or two before the <a href="https://github.com/NixOS/nixpkgs/pull/569264">PR</a> was merged into <code>nixos-unstable</code>.</p>
+<h3>What about muh data?</h3>
+<p>The biggest reason why this migration took as long as it did was because I was worried about losing data.
+I basically forgot everything I knew about ZFS, so I thought I had to use manually mount them using <code>fileSystems</code>.</p>
+<p>Even worse, I thought I had to use <code>disko</code> to manage them since the rest of my machines don't have a <code>fileSystems</code> declaration.</p>
+<p>Luckily, I didn't, and I asked AI to assuage my worries.</p>
+<p>Apparently, ZFS is a lot smarter and powerful than I thought.
+As long as I exported my pools (<code>zpool export tank</code>) before installing Nix, NixOS would automatically import them if specified:</p>
+<pre><code>{
+    boot = {
+        supportedFilesystems = {
+            btrfs = true;
+            zfs = true;
+        };
+        zfs = {
+            forceImportRoot = false;
+            extraPools = [
+                &quot;emi&quot;
+                kai&quot;
+            ];
+        };
+    };
+
+    networking.hostId = &quot;aba04682&quot;;
+
+    services.zfs.autoScrub.enable = true;
+}
+
+</code></pre>
+<p>So all of my mount points would be the same as it was on Ubuntu.</p>
+<h3>The Last Hurdle: Understanding sops-nix</h3>
+<p>In my <a href="https://github.com/nielmin/nixos-config"><code>nixos-config</code></a>, I'm using <code>sops-nix</code> to encrypt passwords before committing to Github.
+The only issue is that I didn't really understand how it worked.</p>
+<p>Initially, my intuition was to store the host ssh keys with <code>sops-nix</code> so that I didn't have to worry about losing them.
+But I ran into a &quot;chicken-and-egg&quot; problem when I tried installing it using <code>nixos-anywhere</code> and <code>disko</code>.</p>
+<p>I wanted <code>sops-nix</code> to decrypt the key and put it in the proper location (<code>/etc/ssh/ssh_ed25519_host_key</code>).
+But <code>sops</code> couldn't decrypt the secret because it was missing <code>ssh_ed25519_host_key</code>.
+And the <code>ssh_ed25519_host_key</code> didn't exist because <code>sops-nix</code> hadn't decrypt yet.</p>
+<p>Ultimately, I realized that using <code>sops</code> to manage a host's key pair wasn't a good idea, and that I should just make host keys ephemeral and generate them when needed.</p>
+<p>In order to get the host keys to the bootstrapped machine, I needed to use the <code>--extra-files</code> flag in <code>nixos-anywhere</code> and pass in a directory.</p>
+<pre><code># Boostrapping a new NixOS host
+
+ssh-keygen -t 25519 -f /path/to/tmp/directory
+
+# The directory structure needs to emulate / (root)
+# 'ssh_ed25519_host_key' goes in /etc/ssh
+# So the folder would be /extra-files/etc/ssh/ssh_ed25519_host_key
+
+nixos-anywhere --extra-files /path/to/tmp/directory \
+    --flake .#foo \
+    --target-host nixos@192.168.1.144
+</code></pre>
+<p>Once I understood how to work with <code>sops-nix</code>, everything fell into place.
+<code>nixos-anywhere</code> finished installing, and I could ssh into my NAS and access my SMB shares.</p>
+<p>Before migrating, I shutdown my homelab VM just case, and when I booted it back up, none of my services complained about missing volume mounts.
+Surprisingly, everything worked as exactly as it did before.</p>
+<p>I would call that a successful migration.</p>
+<h3>Conclusion</h3>
+<p>There is a certain joy I feel knowing that all of my computers are managed with a single Nix configuration.
+The fact that the state of all of my machines are exactly the same and come from a single <code>flake.lock</code> file is really freaking cool.</p>
+<p>I should've have done this sooner.</p>
+</article>
+
+    </section>
+  </main>
+  <footer>
+  
+  <a href="https://nielmin.github.io/feed.xml"><svg class="fa-lg" aria-hidden="true"><use href="#fas-fa-square-rss" xlink:href="#fas-fa-square-rss"></use></svg></a>
+  
+  <a href="https://github.com/nielmin"><svg class="fa-lg" aria-hidden="true"><use href="#fab-fa-square-github" xlink:href="#fab-fa-square-github"></use></svg></a>
+  
+  <a href="mailto:danhwa13@gmail.com"><svg class="fa-lg" aria-hidden="true"><use href="#fas-fa-square-envelope" xlink:href="#fas-fa-square-envelope"></use></svg></a>
+  
+</footer>
+
+
+</body>
+
+</html>
+
+<svg style="display: none;"><symbol data-prefix="fas" data-icon="square-rss" class="svg-inline--fa fa-square-rss" role="img" viewBox="0 0 448 512" aria-hidden="true" id="fas-fa-square-rss"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM96 136c0-13.3 10.7-24 24-24 137 0 248 111 248 248 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200-13.3 0-24-10.7-24-24zm0 96c0-13.3 10.7-24 24-24 83.9 0 152 68.1 152 152 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104-13.3 0-24-10.7-24-24zm0 120a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></symbol></svg>
+<svg style="display: none;"><symbol data-prefix="fab" data-icon="square-github" class="svg-inline--fa fa-square-github" role="img" viewBox="0 0 448 512" aria-hidden="true" id="fab-fa-square-github"><path fill="currentColor" d="M384 32c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l320 0zM223.7 96c-88.4 0-159.7 72.2-159.7 160.6 0 69.4 44.1 126.9 103.4 148.4 8.4 3.1 16.6-2.5 16.6-10.9l0-25c-4.4 1.9-10 3.1-15 3.1-20.6 0-32.8-11.2-41.6-32.2-3.4-8.4-7.2-13.4-14.4-14.4-3.7-.3-5-1.9-5-3.8 0-3.7 6.2-6.6 12.5-6.6 9.1 0 16.9 5.6 25 17.2 6.2 9.1 12.8 13.1 20.6 13.1s12.8-2.8 20-10c5.3-5.3 9.4-10 13.1-13.1-41.3-5-70.3-34.7-70.3-73.1 0-15.6 5.6-32.5 15-43.8-4.1-10.3-3.4-32.2 1.2-41.2 12.5-1.6 29.4 5 39.4 14.1 11.9-3.7 24.4-5.6 39.7-5.6s27.8 1.9 39.1 5.3c9.7-8.8 26.9-15.3 39.4-13.8 4.4 8.4 5 30.3 .9 40.9 10 11.9 15.3 27.8 15.3 44.1 0 38.4-29.1 67.5-70.9 72.8 10.6 6.9 17.8 21.9 17.8 39.1l0 32.5c0 9.4 7.8 14.7 17.2 10.9 56.6-21.6 100.9-78.1 100.9-148.1 0-88.4-71.9-160.6-160.3-160.6z"></path></symbol></svg>
+<svg style="display: none;"><symbol data-prefix="fas" data-icon="square-envelope" class="svg-inline--fa fa-square-envelope" role="img" viewBox="0 0 448 512" aria-hidden="true" id="fas-fa-square-envelope"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM209.1 267.9L108.4 207.4c-7.7-4.6-12.4-12.9-12.4-21.9 0-14.1 11.4-25.5 25.5-25.5l204.9 0c14.1 0 25.5 11.4 25.5 25.5 0 9-4.7 17.3-12.4 21.9L238.9 267.9c-4.5 2.7-9.6 4.1-14.9 4.1s-10.4-1.4-14.9-4.1zM352 237.3l0 82.7c0 17.7-14.3 32-32 32l-192 0c-17.7 0-32-14.3-32-32l0-82.7 96.7 58C202.1 301 213 304 224 304s21.9-3 31.3-8.7l96.7-58z"></path></symbol></svg>
