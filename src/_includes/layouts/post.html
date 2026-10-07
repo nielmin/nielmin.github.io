@@ -1,40 +1,28 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block content %}
+<h2>{{ title }}</h2>
+<div class="post-meta" aria-label="Post metadata">
+  Published:
+  <time datetime="{{ page.date | isoDate }}" data-pagefind-sort="date"
+    >{{ page.date | readableDate }} | </time
+  >
+  {%- if modified -%} Updated:
+  <time datetime="{{ modified | isoDate }}">{{ modified | readableDate }} | </time>
+  {%- endif -%}
 
-{% block content %}
-<h1>{{ title }}</h1>
-<aside class="post-meta" aria-label="Post metadata">
-  <dl>
-    <div>
-      <dt>Tags</dt>
-      <dd>
-        {%- for tag in tags -%}
-          <a href="/tags/{{ tag | lower }}/" rel="tag">{{ tag | lower }}</a>
-          {%- if not loop.last %}, {% endif -%}
-        {%- endfor -%}
-      </dd>
-    </div>
-
-    <div>
-      <dt>Published</dt>
-      <dd><time datetime="{{ page.date | isoDate }}" data-pagefind-sort="date">{{ page.date | readableDate }}</time></dd>
-    </div>
-
-    {%- if modified -%}
-    <div>
-      <dt>Updated</dt>
-      <dd><time datetime="{{ modified | isoDate }}">{{ modified | readableDate }}</time></dd>
-    </div>
-    {%- endif -%}
-  </dl>
-</aside>
+  <ul class="tags-list">
+    tags:
+    {% for tag in tags %}
+    <li>
+      <a href="/tags/{{ tag | lower }}/" rel="tag">{{ tag | lower }}</a>
+      {%- if not loop.last %}, {% endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>
 
 {% if summary %}
-  <blockquote role="doc-introduction">
-    {{ summary }}
-  </blockquote>
+<blockquote role="doc-introduction">{{ summary }}</blockquote>
 {% endif %}
 
-<article>
-  {{ content | safe }}
-</article>
+<article>{{ content | safe }}</article>
 {% endblock %}
